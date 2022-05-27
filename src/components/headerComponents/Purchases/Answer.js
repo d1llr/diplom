@@ -18,8 +18,15 @@ export default function Answer(props) {
             props.data.map(elem =>{
               return <li className='tour' key={elem.id}>
               <div className='name'>
-                {elem.name}
+                  {elem.name}
+                  <div className='ticket'>
+                    <div className='ticketLimit'>
+                      <img src={fire} />
+                      <span> <b>{elem.ticket_count} </b>билета</span>
+                    </div>
+                </div>
               </div>
+              
               <div className='main_info'>
                 <div className='info_container'>
                   <div className='container_1'>
@@ -69,12 +76,6 @@ export default function Answer(props) {
                 </div>
               </div>
               
-              <div className='ticket'>
-                  <div className='ticketLimit'>
-                    <img src={fire} />
-                    <span> <b>{elem.ticket_count} </b>билета</span>
-                  </div>
-              </div>
               </li>
             })
           }

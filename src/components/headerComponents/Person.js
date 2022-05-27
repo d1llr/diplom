@@ -32,8 +32,6 @@ export default function Person(props) {
     <div className='Person'>
       <div className="Person__header">
         <h1>Личный кабинет {user.name}</h1>
-      </div>
-      <div className="Person_contant">
         <section className="menu">
           <ul>
                 <li onClick={()=>setAccount(true)}>
@@ -50,6 +48,8 @@ export default function Person(props) {
                 </li>
           </ul>
         </section>
+      </div>
+      <div className="Person_contant">
         {
           account === 'admin'  ? <AdminPanel/> : account ? <Account /> :  <Purchases/>
         }

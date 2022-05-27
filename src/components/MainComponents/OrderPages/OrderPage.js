@@ -123,7 +123,7 @@ export default function OrderPage(props) {
                   <button className='Custom_Button_more' key={elem.id} onClick={(e)=>GetMoreInfo()}>
                     Подробнее
                   </button>
-                  <button className='Custom_Button' key={elem.id} onClick={(e)=>TakingOrder(elem.id)}>
+                  <button className='Custom_Button' key={elem.id} onClick={(e)=>TakingOrder(elem)}>
                     Купить
                   </button>
               </div>

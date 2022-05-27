@@ -6,13 +6,14 @@ const Modal = ({ active, setActive, elem, setSuccess }) => {
 
 
   const setDataToDatabase = (elem) => {
+    console.log(elem.ticket_limit);
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(re.test(String(document.forms.purchased_order.email.value).toLowerCase()),
       document.forms.purchased_order.tickets.value <= elem.ticket_limit){
       let xhr = new XMLHttpRequest();
       let response = {}
       let formData = new FormData(document.forms.purchased_order);
-      formData.set('elem', elem)
+      formData.set('elem', elem.id)
       xhr.open('POST', 'http://romanmadraimov.diplom/setOrder');
       // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function () {
