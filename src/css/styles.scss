@@ -1504,6 +1504,9 @@ header{
         width:35%;
         height: 600px;
         z-index: -1;
+        border: 1px solid white;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
         .small-container-slider {
           width: 50%;
           overflow: hidden;
@@ -1524,8 +1527,9 @@ header{
         }
         .textSide{
             width: 30%;
-            backdrop-filter: blur(1000px);
+            backdrop-filter: blur(3px);
             display: flex;
+
             border-top-left-radius: 16px;
             border-bottom-left-radius: 16px;
             flex-direction: column;
