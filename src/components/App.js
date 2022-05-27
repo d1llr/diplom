@@ -9,6 +9,7 @@ import { UserContext } from './UserContext';
 import { OrderContext } from './OrderContext';
 import Slider from './Slider/Slider';
 import { SliderContext } from './SliderContext';
+import Loader from './Loader/Loader';
 
 function App() {
   const [Theme, setTheme] =  useState('egipt');
@@ -23,9 +24,18 @@ function App() {
     h1:'Красивые места Египта',
     h3:'Спланируйте отпуск в самых красивых местах Египта'
   })
+  document.body.onload = function(){
+    setTimeout(() => {
+      let preloader = document.getElementById('pre-loader');
+      if (!preloader.classList.contains('done')){
+        preloader.classList.add('done')
+      }
+    }, 1000);
+  }
   const [nextMainText, setNextMainText] = useState('Красивые места Австралии')
   return (
       <div id='app'> 
+      <Loader/>
         <BrowserRouter>
           <UserContext.Provider value = {{user,setUser}}>
             <OrderContext.Provider value = {Data}>
