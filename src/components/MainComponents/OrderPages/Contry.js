@@ -3,32 +3,37 @@ import options from 'C:/diplom/src/img/options.svg'
 
 export default function Contry(props) {
     const [Default, setDefault] = useState('Выберите страну')
-    const [Show, setShow] = useState(false)
+    const [Show, setShow] = useState(true)
     const Menu = useRef()
     function showMenu(){
         setShow(prev => !prev)
-        Show ? Menu.current.className = 'select_body-Countrys' : Menu.current.className = 'hidden'
+        if (Show){
+            Menu.current.className = 'select_body-Countrys'
+            let xhr = new XMLHttpRequest();
+            let response = {}
+            xhr.open('GET', 'http://romanmadraimov.diplom/getCountrys');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    response = JSON.parse(xhr.response)
+                    console.log(response);
+                    setCountrys(response)
+                }
+                else if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 501){
+                console.log('Ошибка при записи данных');
+                }
+            }
+            xhr.send();    
+        }
+        else{
+            Menu.current.className += ' hidden'
+        }
+        
     }
     function ChangeValue(elem){
         setDefault(elem)
         props.ans(elem)
+        showMenu()
     }
-    useEffect(()=>{
-        let xhr = new XMLHttpRequest();
-        let response = {}
-        xhr.open('GET', 'http://romanmadraimov.diplom/getCountrys');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                response = JSON.parse(xhr.response)
-                console.log(response);
-                setCountrys(response)
-            }
-            else if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 501){
-            console.log('Ошибка при записи данных');
-            }
-        }
-        xhr.send();
-    },[])
     const [Countrys,setCountrys] = useState()
   return (
     <section className='contry'>
