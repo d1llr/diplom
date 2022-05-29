@@ -710,6 +710,7 @@ header .modal__contant .login .button button {
           backdrop-filter: brightness(40%) blur(3px);
   border: 1px solid white;
   border-radius: 10px;
+  min-height: 300px;
 }
 
 .Person .Person_contant .tourlist {
@@ -1519,7 +1520,6 @@ header .modal__contant .login .button button {
   -webkit-transform: 0.5s;
           transform: 0.5s;
   width: 100vw;
-  margin-top: 150px;
   background-size: cover;
   position: absolute;
 }
@@ -1528,8 +1528,6 @@ header .modal__contant .login .button button {
   margin: 50px auto;
   width: 70%;
   border-radius: 20px;
-  -webkit-backdrop-filter: blur(100px);
-          backdrop-filter: blur(100px);
 }
 
 .orderpage .orderpage__contant .tourlist {
@@ -1542,23 +1540,22 @@ header .modal__contant .login .button button {
           animation: gradientout 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  height: 250px;
+  height: 750px;
   width: 85%;
   margin: 20px auto;
   border-radius: 20px;
   list-style-type: none;
+  -webkit-backdrop-filter: blur(10px) brightness(50%);
+          backdrop-filter: blur(10px) brightness(50%);
   border: 1px solid white;
   padding: 20px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .orderpage .orderpage__contant .tourlist .tour:hover {
@@ -1569,184 +1566,7 @@ header .modal__contant .login .button button {
           animation-fill-mode: forwards;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .main_info {
-  width: 70%;
-  border-right: 1px solid white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-right: 100px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .name {
-  font-size: 32px;
-  top: -30px;
-  margin-bottom: 20px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_1 {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  padding: 0 20px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_1 .hotel {
-  font-size: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_1 .hotel img {
-  margin-right: 10px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_1 .country {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_1 .country img {
-  margin-right: 10px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_2 {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  padding: 0 20px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_2 .date {
-  font-size: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_2 .date img {
-  width: 22px;
-  margin-right: 10px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_2 .totime {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_2 .totime img {
-  width: 22px;
-  margin-right: 10px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_3 {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 18px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_3 .plus {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  word-wrap: break-word;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_3 .plus img {
-  width: 20px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_3 .plus span {
-  width: 80%;
-  white-space: normal;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main_info .info_container .container_3 .minus {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price {
+.orderpage .orderpage__contant .tourlist .tour .name_and_hotel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1754,132 +1574,144 @@ header .modal__contant .login .button button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price .price_with_discount {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 36px;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price .price_with_discount .text {
-  font-size: 17px;
-  width: 100%;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price .price_with_discount .numbers {
-  background-color: green;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price .price {
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price .price .text {
-  font-size: 17px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .global_price .price .numbers {
-  background-color: #ff0303;
-  padding: 10px;
-  width: 100%;
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu li {
+  list-style-type: none;
+  padding: 8px;
+  border: 1px solid white;
   border-radius: 10px;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .ticketLimit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-animation: gradientin 1s;
-          animation: gradientin 1s;
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu li:hover {
+  background-color: #00ff0d;
+  cursor: pointer;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .ticketLimit img {
-  width: 30px;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .ticketLimit span {
-  font-size: 20px;
-  font-weight: bold;
-  background: linear-gradient(45deg, #fc4a1a, #f7b733);
-  background-clip: text;
-  background-size: 200% 200%;
-  -webkit-text-fill-color: transparent;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .ticket .ticketLimit span b {
-  font-weight: normal;
+.orderpage .orderpage__contant .tourlist .tour .main-info .general {
   color: red;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .Custom_Button {
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order {
+  max-width: 700px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .slide {
   width: 100%;
-  border: 1px solid green;
-  background-color: transparent;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 15px 30px;
-  font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: green;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity ease-in-out 0.4s;
+  transition: opacity ease-in-out 0.4s;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .slide.active-anim {
+  opacity: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .btn-slide {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 1px solid rgba(34, 34, 34, 0.287);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .Custom_Button:hover {
-  color: white;
-  background-color: green;
-  -webkit-box-shadow: 0px 0px 80px 6px #18ff08;
-          box-shadow: 0px 0px 80px 6px #18ff08;
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .btn-slide img {
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .Custom_Button_more {
-  width: 100%;
-  border: 1px solid white;
-  background-color: transparent;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 15px 30px;
-  font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  cursor: pointer;
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .btn-slide.prev {
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
 }
 
-.orderpage .orderpage__contant .tourlist .tour .ticket .Custom_Button_more:hover {
-  color: black;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 80px 6px #ffffff;
-          box-shadow: 0px 0px 80px 6px #ffffff;
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .btn-slide.next {
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .prev {
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .next {
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #f1f1f1;
+  margin: 0 5px;
+  background: #f1f1f1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .dot.active {
+  background: #202020;
 }
 
 .orderpage .modal {
