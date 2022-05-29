@@ -31,7 +31,7 @@ export default function Contry(props) {
     }
     function ChangeValue(elem){
         setDefault(elem)
-        props.ans(elem)
+        props.setCountry(elem)
         showMenu()
     }
     const [Countrys,setCountrys] = useState()

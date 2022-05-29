@@ -3,20 +3,17 @@ import Contry from './Contry'
 import {Link } from 'react-router-dom';
 
 export default function CreateOrder(props) {
-  function CallToDataBase(Data){
-    if (Data){
+  const [country, setCountry] = useState()
+  function CallToDataBase(country){
+    if (country){
       let xhr = new XMLHttpRequest();
-      let formData = new FormData();
-      formData.set('data',Data)
-      xhr.open('GET', `http://romanmadraimov.diplom/getDataForCountry/${Data}`);
-      // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.open('GET', `http://romanmadraimov.diplom/getDataForCountry/${country}`);
       xhr.onreadystatechange = function() {
           if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-              props.setResultData(JSON.parse(xhr.response));
+              props.setData(JSON.parse(xhr.response));
           }
       }
       xhr.send();
-      console.log('Запрос отправлен', formData);
     }
     
   }
@@ -26,10 +23,10 @@ export default function CreateOrder(props) {
           <span className='text'>
             Найдите подходящий тур
           </span>
-          <Contry ans = {props.ans}/>
+          <Contry setCountry = {setCountry}/>
         </div>
         <Link to="OrderPage">
-          <button className='Custom_Button' onClick={()=>CallToDataBase(props.DataToSearch)}>
+          <button className='Custom_Button' onClick={()=>CallToDataBase(country)}>
             Найти
           </button>
         </Link>

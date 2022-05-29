@@ -16,7 +16,6 @@ export default function Main(props) {
     const img = [
         <img src={longArrow} className="next-page-slider" />     
     ]
-    const Data = useContext(OrderContext)
     const {MainText,nextMainText} = useContext(SliderContext)
   return (
     <main className='egipt_container'>
@@ -27,7 +26,7 @@ export default function Main(props) {
             <h3> 
                 {MainText.h3}
             </h3>
-            <CreateOrder ans = {props.ans} DataToSearch = {props.DataToSearch} setResultData = {props.setResultData}/>
+            <CreateOrder setData = {props.setData}/>
         </div>
         <div className='nextPage'>
             <div className='textSide'>

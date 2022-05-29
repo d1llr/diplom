@@ -32,6 +32,7 @@ function App() {
       }
     }, 1000);
   }
+  console.log(Data);
   const [nextMainText, setNextMainText] = useState('Красивые места Австралии')
   return (
       <div id='app'> 
@@ -42,7 +43,7 @@ function App() {
               <SliderContext.Provider value = {{SliderConnect,setSliderConnect, MainText, setMainText, nextMainText, setNextMainText}} >
                 <Slider/>
                   <Routes>
-                    <Route path='/' element = { <Main ans = {setDataToSearch} DataToSearch = {DataToSearch} setResultData = {setData}/>}/>
+                    <Route path='/' element = { <Main setData = {setData}/>}/>
                     <Route path='/OrderPage' element = { Data ? <OrderPage data = {Data}/> : <Mistake />}/>
                     <Route path='/Person' element = {<Person/>}/>
                   </Routes> 
