@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MenuContext } from './General/MenuContext'
 
-export default function Services() {
+export default React.memo(function Services() {
+  const {services} = useContext(MenuContext)
   return (
     <div className='services'>
-      Услуги
+      <ul className='services'>
+
+        
+      </ul>
     </div>
   )
-}
+})

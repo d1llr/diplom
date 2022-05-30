@@ -1,25 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import home from 'C:/diplom/src/img/home.svg'
-import country from 'C:/diplom/src/img/country.svg'
-import flyto from 'C:/diplom/src/img/flyto.svg'
-import flyback from 'C:/diplom/src/img/flyback.svg'
-import plus from 'C:/diplom/src/img/plus.svg'
-import minus from 'C:/diplom/src/img/minus.svg'
-import fire from 'C:/diplom/src/img/fire.svg'
 import ModalOrder from './ModalOrder'
 import Success from '../../Success'
-import Room from './MenuComponents/Room'
-import Services from './MenuComponents/Services'
-import Fly from './MenuComponents/Fly'
-import Date from './MenuComponents/Date'
-import General from './MenuComponents/General'
-
+import Tour from './Tour'
+import BtnSlider from './BtnSlider'
 export default function OrderPage(props) {
   const [ModalActive, setModalActive] = useState(false)
   const [elem, setElem] = useState()
+  const [slideIndex, setSlideIndex] = useState(1)
   const [getInfo, setGetInfo] = useState(true)
   const [success, setSucces] = useState(false)
-  const [menu, setMenu] =  useState('Услуги')
+  const [menu, setMenu] = useState('Услуги')
   const [Data, setData] = useState(
     [{
       // id: 0,
@@ -45,44 +35,34 @@ export default function OrderPage(props) {
   function GetMoreInfo() {
     setGetInfo(prev => !prev)
   }
+  const nextSlide = () => {
+    if (slideIndex !== Data.length) {
+      setSlideIndex(slideIndex + 1)
+    }
+    else if (slideIndex === Data.length) {
+      setSlideIndex(1)
+    }
+  }
+  const prevSlide = () => {
+    if (slideIndex !== 1) {
+      setSlideIndex(slideIndex - 1)
+    }
+    else if (slideIndex === 1) {
+      setSlideIndex(Data.length)
+    }
+  }
   return (
     <section className='orderpage'>
       <div className='orderpage__contant'>
         <ul className='tourlist'>
           {
-            Data.map(elem => {
-              return <li className='tour' key={elem.id}>
-                  <div className='name_and_hotel'>
-                    {elem.name}
-                    <img src={home}/>
-                    {elem.hotel}
-                  </div>
-                  <div className='main-info'>
-                    <ul className='menu'>
-                      <li onClick={()=>setMenu('general')}>
-                        Общее
-                      </li>
-                      <li onClick={()=>setMenu('services')}>
-                        Услуги
-                      </li>
-                      <li onClick={()=>setMenu('room')}>
-                        Выбор номера
-                      </li>
-                      <li onClick={()=>setMenu('fly')}>
-                        Выбор рейса
-                      </li>
-                      <li onClick={()=>setMenu('date')}>
-                        Даты
-                      </li>
-                    </ul>
-                    {
-                      menu === 'general' ? <General/> : menu === 'services' ? <Services/> : menu === 'room' ? <Room/> : menu === 'fly' ? <Fly/> : <Date/>
-                    }
-                  </div>
-              </li>
+            Data.map((elem, index) => {
+              return <Tour elem={elem} classNames={slideIndex === index + 1 ? "tour active-anim" : "tour"} />
             })
-          }
 
+          }
+          <BtnSlider moveSlide={nextSlide} direction={"next"} />
+          <BtnSlider moveSlide={prevSlide} direction={"prev"} />
         </ul>
 
       </div>

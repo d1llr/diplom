@@ -7,31 +7,49 @@ const dataSlider = [
     id: uuidv4(),
     title: "Lorem ipsum",
     subTitle: "Lorem",
-    image : 'japan.svg'
+    image : 'img1.jpg'
   },
   {
     id: uuidv4(),
     title: "Lorem ipsum",
     subTitle: "Lorem",
-    image : 'japan.svg'
+    image : 'img2.jpg'
   },
   {
     id: uuidv4(),
     title: "Lorem ipsum",
     subTitle: "Lorem",
-    image : 'japan.svg'  
+    image : 'img3.jpg'  
   },
   {
     id: uuidv4(),
     title: "Lorem ipsum",
     subTitle: "Lorem",
-    image : 'japan.svg' 
+    image : 'img4.jpg' 
   },
   {
     id: uuidv4(),
     title: "Lorem ipsum",
     subTitle: "Lorem",
-    image : 'japan.svg'
+    image : 'img5.jpg'
+  },
+  {
+    id: uuidv4(),
+    title: "Lorem ipsum",
+    subTitle: "Lorem",
+    image : 'img6.jpg'
+  },
+  {
+    id: uuidv4(),
+    title: "Lorem ipsum",
+    subTitle: "Lorem",
+    image : 'img7.jpg'
+  },
+  {
+    id: uuidv4(),
+    title: "Lorem ipsum",
+    subTitle: "Lorem",
+    image : 'img8.jpg'
   },
 ];
 

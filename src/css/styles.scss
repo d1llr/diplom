@@ -1157,7 +1157,33 @@ header {
     .tourlist {
       margin: 0;
       padding: 40px 0;
-
+      .btn-slide-main{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #f1f1f1;
+        border: 1px solid rgba(34, 34, 34, 0.287);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        img {
+          width: 25px;
+          height: 25px;
+          pointer-events: none;
+        }
+        &.prev {
+          top: 50%;
+          left: 20px;
+          transform: translateY(-60%);
+        }
+        &.next {
+          top: 50%;
+          right: 20px;
+          transform: translateY(-60%);
+        }
+      }
       .tour {
         animation: gradientout 1s;
         animation-fill-mode: forwards;
@@ -1169,9 +1195,13 @@ header {
         backdrop-filter: blur(10px) brightness(50%);
         border: 1px solid rgb(255, 255, 255);
         padding: 20px 40px;
-        display: flex;
+        display: none;
         flex-direction: column;
-
+        opacity: 0;
+        &.active-anim{
+          opacity: 1;
+          display: flex;
+        }
         &:hover {
           border: 1px solid #00ff0d;
           animation: gradientin 1s;
@@ -1181,7 +1211,6 @@ header {
         .name_and_hotel {
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
           align-items: center;
           font-size: 36px;
         }
@@ -1194,25 +1223,35 @@ header {
             li {
               list-style-type: none;
               padding: 8px;
-              border: 1px solid white;
-              border-radius: 10px;
-
+              transition: 0.5s all;
+              margin-right: 20px;
+              border-bottom: 1px solid transparent;
               &:hover {
-                background-color: #00ff0d;
+                padding: 8px;
+                border-bottom: 1px solid white;
                 cursor: pointer;
               }
             }
           }
 
           .general {
-            color: red;
-
+            color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 30px;
             .container-slider-order{
-              max-width: 700px;
-              height: 500px;
+              width: 15%;
+              height: 60vh;
               position: relative;
               overflow: hidden;
+              border-radius: 20px;
               box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+              transition: 1.5s all;
+              &:hover{
+                  width: 100%;
+                  background-color: white;
+                }
               .slide {
                 width: 100%;
                 height: 100%;
@@ -1256,16 +1295,12 @@ header {
                 }
               }
             }
-        
-            .prev {
-              top: 50%;
-              left: 20px;
-              transform: translateY(-60%);
-            }
-            .next {
-              top: 50%;
-              right: 20px;
-              transform: translateY(-60%);
+            .header{
+              height: max-content;
+              font-size: calc(1px + 1vw);
+              white-space: normal;
+              position: absolute;
+              padding: 0 150px 0 200px;
             }
             
             

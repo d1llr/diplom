@@ -1535,6 +1535,45 @@ header .modal__contant .login .button button {
   padding: 40px 0;
 }
 
+.orderpage .orderpage__contant .tourlist .btn-slide-main {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 1px solid rgba(34, 34, 34, 0.287);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.orderpage .orderpage__contant .tourlist .btn-slide-main img {
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.orderpage .orderpage__contant .tourlist .btn-slide-main.prev {
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
+.orderpage .orderpage__contant .tourlist .btn-slide-main.next {
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+
 .orderpage .orderpage__contant .tourlist .tour {
   -webkit-animation: gradientout 1s;
           animation: gradientout 1s;
@@ -1549,13 +1588,19 @@ header .modal__contant .login .button button {
           backdrop-filter: blur(10px) brightness(50%);
   border: 1px solid white;
   padding: 20px 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  opacity: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour.active-anim {
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .orderpage .orderpage__contant .tourlist .tour:hover {
@@ -1574,8 +1619,6 @@ header .modal__contant .login .button button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1595,26 +1638,48 @@ header .modal__contant .login .button button {
 .orderpage .orderpage__contant .tourlist .tour .main-info .menu li {
   list-style-type: none;
   padding: 8px;
-  border: 1px solid white;
-  border-radius: 10px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  margin-right: 20px;
+  border-bottom: 1px solid transparent;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .menu li:hover {
-  background-color: #00ff0d;
+  padding: 8px;
+  border-bottom: 1px solid white;
   cursor: pointer;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general {
-  color: red;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order {
-  max-width: 700px;
-  height: 500px;
+  width: 15%;
+  height: 60vh;
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 1.5s all;
+  transition: 1.5s all;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order:hover {
+  width: 100%;
+  background-color: white;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order .slide {
@@ -1676,18 +1741,14 @@ header .modal__contant .login .button button {
           transform: translateY(-60%);
 }
 
-.orderpage .orderpage__contant .tourlist .tour .main-info .general .prev {
-  top: 50%;
-  left: 20px;
-  -webkit-transform: translateY(-60%);
-          transform: translateY(-60%);
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main-info .general .next {
-  top: 50%;
-  right: 20px;
-  -webkit-transform: translateY(-60%);
-          transform: translateY(-60%);
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .header {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: calc(1px + 1vw);
+  white-space: normal;
+  position: absolute;
+  padding: 0 150px 0 200px;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general .container-dots {

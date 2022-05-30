@@ -32,7 +32,6 @@ function App() {
       }
     }, 1000);
   }
-  console.log(Data);
   const [nextMainText, setNextMainText] = useState('Красивые места Австралии')
   return (
       <div id='app'> 
