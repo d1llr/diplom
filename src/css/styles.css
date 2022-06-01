@@ -90,8 +90,8 @@ body {
 }
 
 .container-slider {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 150vh;
   position: absolute;
   overflow: hidden;
   z-index: -2;
@@ -1579,15 +1579,19 @@ header .modal__contant .login .button button {
           animation: gradientout 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  height: 750px;
-  width: 85%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: 90%;
   margin: 20px auto;
   border-radius: 20px;
   list-style-type: none;
   -webkit-backdrop-filter: blur(10px) brightness(50%);
           backdrop-filter: blur(10px) brightness(50%);
   border: 1px solid white;
-  padding: 20px 40px;
+  padding: 30px 40px;
+  -webkit-transition: 3s all;
+  transition: 3s all;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1601,14 +1605,6 @@ header .modal__contant .login .button button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.orderpage .orderpage__contant .tourlist .tour:hover {
-  border: 1px solid #00ff0d;
-  -webkit-animation: gradientin 1s;
-          animation: gradientin 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .name_and_hotel {
@@ -1625,6 +1621,11 @@ header .modal__contant .login .button button {
   font-size: 36px;
 }
 
+.orderpage .orderpage__contant .tourlist .tour .main-info {
+  width: 100%;
+  height: 100%;
+}
+
 .orderpage .orderpage__contant .tourlist .tour .main-info .menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1638,6 +1639,7 @@ header .modal__contant .login .button button {
 .orderpage .orderpage__contant .tourlist .tour .main-info .menu li {
   list-style-type: none;
   padding: 8px;
+  font-size: 20px;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
   margin-right: 20px;
@@ -1662,7 +1664,12 @@ header .modal__contant .login .button button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general .container-slider-order {
@@ -1745,10 +1752,15 @@ header .modal__contant .login .button button {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  font-size: calc(1px + 1vw);
+  font-size: calc(2px + 1vw);
   white-space: normal;
+  width: 40em;
   position: absolute;
-  padding: 0 150px 0 200px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-left: 15%;
+  z-index: -1;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general .container-dots {
@@ -1762,7 +1774,7 @@ header .modal__contant .login .button button {
   display: flex;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .main-info .general .dot {
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-dots .dot {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1771,7 +1783,249 @@ header .modal__contant .login .button button {
   background: #f1f1f1;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .main-info .general .dot.active {
+.orderpage .orderpage__contant .tourlist .tour .main-info .general .container-dots .dot.active {
+  background: #202020;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 600px;
+  width: 100%;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .services li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .services li .img_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .services li .img_container img {
+  background-color: transparent;
+  width: 20px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 0px 0px 0px;
+  margin-top: 10px;
+  list-style-type: none;
+  border: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .properties {
+  margin: 0;
+  padding: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .properties .properties-li {
+  border: 0;
+  height: 30px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px 0;
+  text-align: left;
+  margin: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container {
+  border: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  border-radius: 3px;
+  background: white;
+  color: #000;
+  cursor: pointer;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container:hover {
+  border: 1px solid green;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container:hover .price {
+  opacity: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container:hover .button {
+  opacity: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container .price {
+  font-size: 20px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  white-space: nowrap;
+  opacity: 1;
+  position: absolute;
+  z-index: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container .button {
+  padding: 20px 0;
+  width: 100%;
+  line-height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-size: 20px;
+  opacity: 0;
+  z-index: 1;
+  border: 1px solid white;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container .button.active {
+  padding: 20px 0;
+  opacity: 1;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  z-index: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .name {
+  font-size: 26px;
+  padding: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  -webkit-transition: 1.5s all;
+  transition: 1.5s all;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity ease-in-out 0.4s;
+  transition: opacity ease-in-out 0.4s;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .slide.active-anim {
+  opacity: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .container-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .container-dots .dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 3px solid #000000;
+  margin: 0 5px;
+  background: #f1f1f1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .container-dots .dot.active {
   background: #202020;
 }
 
