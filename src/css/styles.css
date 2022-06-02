@@ -1636,7 +1636,12 @@ header .modal__contant .login .button button {
           flex-direction: row;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .main-info .menu li {
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu .disable {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu .item {
   list-style-type: none;
   padding: 8px;
   font-size: 20px;
@@ -1646,10 +1651,18 @@ header .modal__contant .login .button button {
   border-bottom: 1px solid transparent;
 }
 
-.orderpage .orderpage__contant .tourlist .tour .main-info .menu li:hover {
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu .item:hover {
   padding: 8px;
   border-bottom: 1px solid white;
   cursor: pointer;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu .item .chosen {
+  border-bottom: 1px solid #11ff00;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .menu .item.current {
+  border-bottom: 1px solid white !important;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .general {
@@ -1797,6 +1810,7 @@ header .modal__contant .login .button button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 20px;
   height: 600px;
   width: 100%;
 }
@@ -1847,7 +1861,7 @@ header .modal__contant .login .button button {
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .room {
   margin: 0;
-  padding: 0;
+  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1905,7 +1919,6 @@ header .modal__contant .login .button button {
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container {
-  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1917,14 +1930,9 @@ header .modal__contant .login .button button {
       -ms-flex-pack: center;
           justify-content: center;
   overflow: hidden;
-  border-radius: 3px;
   background: white;
   color: #000;
   cursor: pointer;
-}
-
-.orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container:hover {
-  border: 1px solid green;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container:hover .price {
@@ -1956,14 +1964,13 @@ header .modal__contant .login .button button {
   font-size: 20px;
   opacity: 0;
   z-index: 1;
-  border: 1px solid white;
+  border: 3px solid lime;
 }
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .room li .button-container .button.active {
   padding: 20px 0;
   opacity: 1;
-  border: 1px solid black;
-  border-radius: 3px;
+  border: 3px solid lime;
   background-color: white;
   color: black;
   z-index: 1;
@@ -2027,6 +2034,319 @@ header .modal__contant .login .button button {
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .room .room-slider .container-dots .dot.active {
   background: #202020;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  border-radius: 3px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  background: white;
+  color: #000;
+  cursor: pointer;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list .button-container:hover .price {
+  opacity: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list .button-container:hover .button {
+  opacity: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list .button-container .price {
+  font-size: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 1;
+  position: absolute;
+  z-index: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list .button-container .button {
+  padding: 10px 10px;
+  width: 100%;
+  line-height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 20px;
+  opacity: 0;
+  z-index: 1;
+  border: 3px solid white;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .data_list .button-container .button.active {
+  opacity: 1;
+  border-radius: 3px;
+  background-color: white;
+  border: 3px solid lime;
+  color: black;
+  z-index: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li {
+  width: 30%;
+  padding: 0px 0px 0px 0px;
+  margin-top: 10px;
+  list-style-type: none;
+  border: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .name {
+  font-size: 26px;
+  padding: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .properties {
+  margin: 0;
+  padding: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .properties .properties-li {
+  border: 0;
+  width: 100%;
+  font-size: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px 0;
+  text-align: left;
+  margin: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  background: white;
+  color: #000;
+  cursor: pointer;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .button-container:hover .price {
+  opacity: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .button-container:hover .button {
+  opacity: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .button-container .price {
+  font-size: 20px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  white-space: nowrap;
+  opacity: 1;
+  position: absolute;
+  z-index: 0;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .button-container .button {
+  padding: 20px 0;
+  width: 100%;
+  line-height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-size: 20px;
+  opacity: 0;
+  z-index: 1;
+  border: 3px solid lime;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .fly .type_flight li .button-container .button.active {
+  padding: 20px 0;
+  opacity: 1;
+  border: 3px solid lime;
+  background-color: white;
+  color: black;
+  z-index: 1;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid white;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 20px 0px 0px 0px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info table, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form table {
+  border-spacing: 0px;
+  padding: 20px 40px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info table th, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form table th {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid white;
+  font-size: 20px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info table td, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form table td {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid white;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info h1, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form h1 {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .end, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .end {
+  border: 0;
+  margin: 0;
+  padding: 10px 0;
+  background-color: rgba(13, 245, 13, 0.7);
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 50px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .to, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .to, .orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .from, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .from {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 50px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .to .name, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .to .name, .orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .from .name, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .from .name {
+  font-size: 20px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .to .info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .to .info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .from .info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .from .info {
+  font-size: 18px;
 }
 
 .orderpage .modal {

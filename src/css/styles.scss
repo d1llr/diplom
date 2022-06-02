@@ -1226,7 +1226,12 @@ header {
             display: flex;
             flex-direction: row;
 
-            li {
+            .disable {
+              opacity: 0.3;
+              pointer-events: none;
+            }
+
+            .item {
               list-style-type: none;
               padding: 8px;
               font-size: 20px;
@@ -1239,7 +1244,16 @@ header {
                 border-bottom: 1px solid white;
                 cursor: pointer;
               }
+
+              .chosen {
+                border-bottom: 1px solid rgb(17, 255, 0);
+              }
+
+              &.current {
+                border-bottom: 1px solid white !important;
+              }
             }
+
           }
 
           .general {
@@ -1353,7 +1367,7 @@ header {
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
-
+            padding-top: 20px;
             height: 600px;
             width: 100%;
 
@@ -1387,7 +1401,7 @@ header {
 
           .room {
             margin: 0;
-            padding: 0;
+            padding: 20px 0;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -1421,20 +1435,16 @@ header {
               }
 
               .button-container {
-                border: 1px solid white;
                 display: flex;
                 width: 100%;
                 align-items: center;
                 justify-content: center;
                 overflow: hidden;
-                border-radius: 3px;
                 background: rgb(255, 255, 255);
                 color: #000;
                 cursor: pointer;
 
                 &:hover {
-                  border: 1px solid green;
-
                   .price {
                     opacity: 0;
                   }
@@ -1463,13 +1473,12 @@ header {
                   font-size: 20px;
                   opacity: 0;
                   z-index: 1;
-                  border: 1px solid rgb(255, 255, 255);
+                  border: 3px solid rgb(0, 255, 0);
 
                   &.active {
                     padding: 20px 0;
                     opacity: 1;
-                    border: 1px solid black;
-                    border-radius: 3px;
+                    border: 3px solid rgb(0, 255, 0);
                     background-color: rgb(255, 255, 255);
                     color: rgb(0, 0, 0);
                     z-index: 1;
@@ -1534,6 +1543,237 @@ header {
           }
 
           .fly {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+
+            .data_list {
+              display: flex;
+              justify-content: space-between;
+              flex-direction: row;
+
+              .button-container {
+                display: flex;
+                width: 30%;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                border-radius: 3px;
+                transition: 0.5s all;
+                background: rgb(255, 255, 255);
+                color: #000;
+                cursor: pointer;
+
+                &:hover {
+                  .price {
+                    opacity: 0;
+                  }
+
+                  .button {
+                    opacity: 1;
+                  }
+                }
+
+                .price {
+                  font-size: 20px;
+                  transition: 0.5s;
+                  opacity: 1;
+                  position: absolute;
+                  z-index: 0;
+                }
+
+                .button {
+                  padding: 10px 10px;
+                  width: 100%;
+                  line-height: 100%;
+                  text-align: center;
+                  vertical-align: middle;
+                  transition: 0.5s;
+                  font-size: 20px;
+                  opacity: 0;
+                  z-index: 1;
+                  border: 3px solid white;
+
+                  &.active {
+                    opacity: 1;
+                    border-radius: 3px;
+                    background-color: white;
+                    border: 3px solid rgb(0, 255, 0);
+                    color: rgb(0, 0, 0);
+                    z-index: 1;
+                  }
+                }
+              }
+            }
+
+            .type_flight {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+
+              li {
+                width: 30%;
+                padding: 0px 0px 0px 0px;
+                margin-top: 10px;
+                list-style-type: none;
+                border: 1px solid white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                .name {
+                  font-size: 26px;
+                  padding: 10px;
+                }
+
+                .properties {
+                  margin: 0;
+                  padding: 10px;
+
+                  .properties-li {
+                    border: 0;
+                    width: 100%;
+
+                    font-size: 19px;
+                    display: flex;
+                    flex-direction: row;
+                    padding: 10px 0;
+                    text-align: left;
+                    margin: 0;
+                  }
+                }
+
+                .button-container {
+                  display: flex;
+                  width: 100%;
+                  align-items: center;
+                  justify-content: center;
+                  overflow: hidden;
+                  background: rgb(255, 255, 255);
+                  color: #000;
+                  cursor: pointer;
+
+                  &:hover {
+                    .price {
+                      opacity: 0;
+                    }
+
+                    .button {
+                      opacity: 1;
+                    }
+                  }
+
+                  .price {
+                    font-size: 20px;
+                    transition: 1s;
+                    white-space: nowrap;
+                    opacity: 1;
+                    position: absolute;
+                    z-index: 0;
+                  }
+
+                  .button {
+                    padding: 20px 0;
+                    width: 100%;
+                    line-height: 100%;
+                    text-align: center;
+                    vertical-align: middle;
+                    transition: 1s;
+                    font-size: 20px;
+                    opacity: 0;
+                    z-index: 1;
+                    border: 3px solid rgb(0, 255, 0);
+
+                    &.active {
+                      padding: 20px 0;
+                      opacity: 1;
+                      border: 3px solid rgb(0, 255, 0);
+                      background-color: rgb(255, 255, 255);
+                      color: rgb(0, 0, 0);
+                      z-index: 1;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .result {
+            padding: 20px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .result_info {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border: 1px solid white;
+              overflow: hidden;
+              border-radius: 10px;
+              padding: 20px 0px 0px 0px;
+              table {
+                border-spacing: 0px;
+                padding: 20px 40px;
+                th {
+                  text-align: center;
+                  padding: 10px;
+                  border: 1px solid white;
+                  font-size: 20px;
+                }
+
+                td {
+                  font-size: 18px;
+                  padding: 10px;
+                  border: 1px solid white;
+                }
+              }
+              h1{
+                margin: 0 auto;
+                margin-bottom: 20px;
+                padding: 0;
+                padding-bottom: 20px;
+                border-bottom: 1px solid;
+                text-align: center;
+                align-items: center;
+                width: 100%;
+              }
+              .end{
+                border: 0;
+                margin: 0;
+                padding: 10px 0;
+                background-color: rgba(13, 245, 13, 0.7);
+              }
+              .date {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 20px 50px;
+                .to {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: space-between;
+                  height: 50px;
+                  .name {
+                    font-size: 20px;
+                  }
+
+                  .info {
+                    font-size: 18px;
+                  }
+                }
+                .from{
+                  @extend .to;
+                }
+
+              }
+
+            }
+            .form{
+              @extend .result_info;
+            }
           }
         }
       }

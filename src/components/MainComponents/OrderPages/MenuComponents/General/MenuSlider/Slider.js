@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import BtnSlider from './BtnSlider'
 import dataSlider from './DataSlider'
 import {InfoContext} from '../../../InfoContext'
-export default function Slider() {
+export default React.memo(function Slider() {
     const info = useContext(InfoContext)
     const [slideIndex, setSlideIndex] = useState(1)
     console.log(info);
@@ -51,4 +51,4 @@ export default function Slider() {
             </div>
         </div>
     )
-}
+})

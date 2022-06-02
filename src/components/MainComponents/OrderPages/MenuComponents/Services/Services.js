@@ -17,7 +17,7 @@ export default React.memo(function Services() {
       <ul className='services'>
         {
           services ? Object.keys(services).map(key => {
-            return <li>
+            return <li key={key}>
               <div className='img_container'>
                 <img src={IMGChecker(key)}/>
               </div>

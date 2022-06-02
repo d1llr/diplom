@@ -1,24 +1,41 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AnswerContext } from '../../AnswerContext'
 import { MenuContext } from '../General/MenuContext'
 import Slider from './RoomSlider/Slider'
 
 export default React.memo(function Room() {
   const { room } = useContext(MenuContext)
+  const { answer, setAnswer } = useContext(AnswerContext)
   let EcoRoom = JSON.parse(room.eco_room)
   let StandartRoom = JSON.parse(room.standart_room)
   let LuxuryRoom = JSON.parse(room.luxury_room)
   const [chosen, setChosen] = useState()
-  const RoomChoosen = (elem, name) =>{
-    if (chosen){
+  const RoomChoosen = (elem, str, price) => {
+    if (chosen) {
       chosen.className = 'button'
       chosen.innerHTML = 'Выбрать'
       setChosen(elem)
       elem.className = 'button active'
       elem.innerHTML = 'Выбрано'
+      setAnswer({
+        ...answer,
+        room: {
+          name: str,
+          price: price
+        }
+      })
     }
-    else{
+    else {
       setChosen(elem)
       elem.className = 'button active'
+      elem.innerHTML = 'Выбрано'
+      setAnswer({
+        ...answer,
+        room: {
+          name: str,
+          price: price
+        }
+      })
     }
   }
   return (
@@ -30,7 +47,7 @@ export default React.memo(function Room() {
         <Slider class={'EcoRoom'} />
         <ul className='properties'>
           {Object.keys(EcoRoom).map((key) => {
-            return key !== 'Price' ? <li className='properties-li'>{key === 'Area' ? '- ' + EcoRoom[key] + "м2" : '- ' + EcoRoom[key]}</li>
+            return key !== 'Price' ? <li key={key} className='properties-li'> {key === 'Area' ? '- ' + EcoRoom[key] + "м2" : '- ' + EcoRoom[key]}</li>
               : ''
           })}
         </ul>
@@ -38,9 +55,16 @@ export default React.memo(function Room() {
           <div className='price'>
             {EcoRoom.Price} ₽
           </div>
-          <div className='button' onClick={(e)=>RoomChoosen(e.target, 'EcoRoom')}>
-            Выбрать
-          </div>
+          {
+            answer.room.name === 'eco_room' ?
+              <div className='button active'>
+                Выбрано
+              </div> :
+              <div className='button'
+                onClick={(e) => RoomChoosen(e.target, 'eco_room', EcoRoom.Price)}>
+                Выбрать
+              </div>
+          }
         </div>
       </li>
       <li>
@@ -58,9 +82,16 @@ export default React.memo(function Room() {
           <div className='price'>
             {StandartRoom.Price} ₽
           </div>
-          <div className='button' onClick={(e)=>RoomChoosen(e.target, 'StandartRoom')}>
-            Выбрать
-          </div>
+          {
+            answer.room.name === 'standart_room' ?
+              <div className='button active'>
+                Выбрано
+              </div> :
+              <div className='button'
+                onClick={(e) => RoomChoosen(e.target, 'standart_room', StandartRoom.Price)}>
+                Выбрать
+              </div>
+          }
         </div>
       </li>
       <li>
@@ -78,9 +109,16 @@ export default React.memo(function Room() {
           <div className='price'>
             {LuxuryRoom.Price} ₽
           </div>
-          <div className='button' onClick={(e)=>RoomChoosen(e.target, 'LuxuryRoom')}>
-            Выбрать
-          </div>
+          {
+            answer.room.name === 'luxury_room' ?
+              <div className='button active'>
+                Выбрано
+              </div> :
+              <div className='button'
+                onClick={(e) => RoomChoosen(e.target, 'luxury_room', LuxuryRoom.Price)}>
+                Выбрать
+              </div>
+          }
         </div>
       </li>
     </ul>
