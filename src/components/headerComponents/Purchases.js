@@ -10,7 +10,7 @@ export default function Purchases() {
     let xhr = new XMLHttpRequest();
     let response = {}
     let formData = new FormData();
-    formData.set('user', user.login)
+    formData.set('login', user.login)
     xhr.open('POST', 'http://romanmadraimov.diplom/getOrder');
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {

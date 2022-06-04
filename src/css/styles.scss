@@ -448,27 +448,27 @@ header {
 @keyframes animationForEvent {
   0% {
     opacity: 0;
-    margin-right: -100%;
+    margin-left: -100%;
   }
 
   40% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
 
   50% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
 
   60% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
 
   100% {
     opacity: 0;
-    margin-right: -100%;
+    margin-left: -100%;
   }
 }
 
@@ -533,370 +533,60 @@ header {
     backdrop-filter: brightness(40%) blur(3px);
     border: 1px solid white;
     border-radius: 10px;
-    min-height: 300px;
+    min-height: 600px;
 
-    .tourlist {
+    .person-tourlist {
       margin: 0;
       padding: 0;
       height: 500px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       overflow-y: scroll;
       padding: 20px 40px;
 
-      .tour {
-        animation: gradientout 1s;
-        animation-fill-mode: forwards;
-        height: 350px;
+      .person-tour {
         margin-bottom: 20px;
         border-radius: 20px;
+        width: 25%;
         list-style-type: none;
         border: 1px solid rgb(255, 255, 255);
         padding: 20px 30px;
+        padding-bottom: 0px;
         flex-direction: row;
         justify-content: space-between;
 
-        &:hover {
-          border: 1px solid #00ff0d;
-          animation: gradientin 1s;
-          animation-fill-mode: forwards;
-        }
-
-        .name {
-          font-size: 32px;
-          top: -30px;
+        .order_number {
+          background-color: #ffffff;
+          width: max-content;
+          color: #000;
+          padding: 5px 10px;
+          font-weight: bold;
+          margin-left: -15%;
+          font-size: 20px;
           margin-bottom: 20px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-
-          .ticket {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            align-items: center;
-
-            .global_price {
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-
-              .price_with_discount {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                .text {
-                  font-size: 17px;
-                  width: 100%;
-                }
-
-                .numbers {
-                  background-color: green;
-                  padding: 10px;
-                  border-radius: 10px;
-                  width: 100%;
-                  text-align: center;
-                }
-              }
-
-              .price {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                .text {
-                  font-size: 17px;
-                }
-
-                .numbers {
-                  background-color: rgb(255, 3, 3);
-                  padding: 10px;
-                  width: 100%;
-                  border-radius: 10px;
-                }
-              }
-            }
-
-            .ticketLimit {
-              display: flex;
-              align-items: center;
-              animation: gradientin 1s;
-
-              img {
-                width: 30px;
-              }
-
-              span {
-                font-size: 20px;
-                font-weight: bold;
-                background: linear-gradient(45deg, #fc4a1a, #f7b733);
-                background-clip: text;
-                background-size: 200% 200%;
-                -webkit-text-fill-color: transparent;
-
-                b {
-                  font-weight: normal;
-                  color: red;
-                }
-              }
-            }
-
-            .Custom_Button {
-              width: 100%;
-
-              border: 1px solid green;
-              background-color: transparent;
-              border-radius: 10px;
-              text-transform: uppercase;
-              font-size: 16px;
-              padding: 15px 30px;
-              font-weight: 500;
-              transition: 0.2s;
-              color: green;
-              cursor: pointer;
-
-              &:hover {
-                color: white;
-                background-color: green;
-                box-shadow: 0px 0px 80px 6px #18ff08;
-              }
-            }
-
-            .Custom_Button_more {
-              width: 100%;
-              border: 1px solid white;
-              background-color: transparent;
-              border-radius: 10px;
-              text-transform: uppercase;
-              font-size: 16px;
-              padding: 15px 30px;
-              font-weight: 500;
-              transition: 0.2s;
-              color: rgb(255, 255, 255);
-              cursor: pointer;
-
-              &:hover {
-                color: rgb(0, 0, 0);
-                background-color: #ffffff;
-                box-shadow: 0px 0px 80px 6px #ffffff;
-              }
-            }
-          }
+          border-radius: 5px;
         }
 
-        .main_info {
-          display: flex;
-          flex-direction: column;
-          padding-right: 30px;
+        .price {
+          border-bottom: 2px solid rgba(110, 255, 21, 0.5);
+          width: max-content;
+          color: rgb(255, 255, 255);
+          padding: 5px 10px;
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: 20px;
 
-          .info_container {
-            display: flex;
-            justify-content: space-between;
-
-            .container_1 {
-              height: 100px;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              min-width: max-content;
-              padding: 0 20px;
-
-              .hotel {
-                font-size: 20px;
-                display: flex;
-                align-items: center;
-
-                img {
-                  margin-right: 10px;
-                }
-              }
-
-              .country {
-                display: flex;
-                margin-top: 20px;
-                font-size: 20px;
-
-                img {
-                  margin-right: 10px;
-                }
-              }
-            }
-
-            .container_2 {
-              height: 100px;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              min-width: max-content;
-              padding: 0 20px;
-
-              .date {
-                font-size: 20px;
-                display: flex;
-
-                img {
-                  width: 22px;
-                  margin-right: 10px;
-                }
-              }
-
-              .totime {
-                display: flex;
-                align-items: center;
-                margin-top: 20px;
-                font-size: 20px;
-
-                img {
-                  width: 22px;
-                  margin-right: 10px;
-                }
-              }
-            }
-
-            .container_3 {
-              height: 100px;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              font-size: 18px;
-
-              .plus {
-                display: flex;
-                align-items: flex-start;
-                word-wrap: break-word;
-
-                img {
-                  width: 20px;
-                }
-
-                span {
-                  width: 80%;
-                  white-space: normal;
-                }
-              }
-
-              .minus {
-                display: flex;
-                align-items: center;
-              }
-            }
-          }
         }
 
-        .ticket {
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          align-items: center;
+        .text {
+          font-size: 20px;
+          padding: 10px;
 
-          .global_price {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-            .price_with_discount {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-
-              .text {
-                font-size: 17px;
-                width: 100%;
-              }
-
-              .numbers {
-                background-color: green;
-                padding: 10px;
-                border-radius: 10px;
-                width: 100%;
-                text-align: center;
-              }
-            }
-
-            .price {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-
-              .text {
-                font-size: 17px;
-              }
-
-              .numbers {
-                background-color: rgb(255, 3, 3);
-                padding: 10px;
-                width: 100%;
-                border-radius: 10px;
-              }
-            }
-          }
-
-          .ticketLimit {
-            display: flex;
-            align-items: center;
-            animation: gradientin 1s;
-
-            img {
-              width: 30px;
-            }
-
-            span {
-              font-size: 20px;
-              font-weight: bold;
-              background: linear-gradient(45deg, #fc4a1a, #f7b733);
-              background-clip: text;
-              background-size: 200% 200%;
-              -webkit-text-fill-color: transparent;
-
-              b {
-                font-weight: normal;
-                color: red;
-              }
-            }
-          }
-
-          .Custom_Button {
-            width: 100%;
-
-            border: 1px solid green;
-            background-color: transparent;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-size: 16px;
-            padding: 15px 30px;
-            font-weight: 500;
-            transition: 0.2s;
-            color: green;
-            cursor: pointer;
-
-            &:hover {
-              color: white;
-              background-color: green;
-              box-shadow: 0px 0px 80px 6px #18ff08;
-            }
-          }
-
-          .Custom_Button_more {
-            width: 100%;
-            border: 1px solid white;
-            background-color: transparent;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-size: 16px;
-            padding: 15px 30px;
-            font-weight: 500;
-            transition: 0.2s;
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-
-            &:hover {
-              color: rgb(0, 0, 0);
-              background-color: #ffffff;
-              box-shadow: 0px 0px 80px 6px #ffffff;
-            }
+          span {
+            border-bottom: 1px dashed green;
           }
         }
       }
@@ -1008,11 +698,6 @@ header {
             color: red;
           }
 
-          .success {
-            font-size: 14px;
-            color: rgb(30, 224, 24) !important;
-          }
-
           label {
             font-style: italic;
             color: #929292;
@@ -1034,18 +719,20 @@ header {
     }
 
     .admin {
-      .success {
-        animation: animationForEvent 4s ease-in-out;
-        padding: 20px 40px;
-        font-size: 20px;
-        background-color: #00ff0d;
-        border-radius: 10px;
-        position: absolute;
-        top: 0;
-        right: -100px;
-        opacity: 0;
-        margin-right: -100%;
-      }
+      overflow: scroll;
+      height: 600px;
+      // .success {
+      //   animation: animationForEvent 4s ease-in-out;
+      //   padding: 20px 40px;
+      //   font-size: 20px;
+      //   background-color: #00ff0d;
+      //   border-radius: 10px;
+      //   position: absolute;
+      //   top: 0;
+      //   right: -100px;
+      //   opacity: 0;
+      //   margin-right: -100%;
+      // }
 
       .error {
         animation: animationForEvent 4s ease-in-out;
@@ -1065,7 +752,7 @@ header {
         padding: 0;
         display: flex;
 
-        li {
+        .item {
           padding: 10px;
           font-size: 18px;
           list-style-type: none;
@@ -1073,10 +760,14 @@ header {
           border-radius: 10px;
           margin-right: 10px;
           margin-left: 10px;
+          cursor: pointer;
 
           &:hover {
             background-color: #00ff0d;
-            cursor: pointer;
+          }
+
+          &.current {
+            background-color: #00ff0d;
           }
         }
       }
@@ -1123,6 +814,78 @@ header {
           button {
             padding: 10px;
             background-color: #00ff0d;
+          }
+        }
+      }
+
+      .hotels {
+        @extend .tours;
+
+        table {
+          height: 100px;
+
+          .content {
+            width: 100px;
+            overflow: scroll;
+
+            td {
+              white-space: nowrap;
+            }
+
+            .description {
+              max-width: 100px;
+              padding: 5px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              cursor: pointer;
+
+              &.active {
+                max-width: none;
+                white-space: pre-wrap;
+                overflow: auto;
+                transition: 1s all;
+                width: max-content;
+                text-overflow: clip;
+                padding: 5px;
+              }
+
+            }
+          }
+        }
+
+        .create_tour_container {
+          width: 50%;
+          .create_tour {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border:1px solid white;
+            border-radius: 5px;
+            padding: 20px 30px;
+            input {
+              margin-top: 20px;
+              padding: 5px 10px;
+            }
+            textarea{
+              width: 100%;
+            }
+            .button{
+              width: 40px;
+              height: 20px;
+              background-color: #00ff0d;
+            }
+          }
+
+          button {
+            padding: 10px;
+            background-color: #00ff0d;
+          }
+          .services{
+            .options{
+              display: flex;
+              flex-direction: column;
+            }
           }
         }
       }
@@ -1703,8 +1466,10 @@ header {
             padding: 20px 0;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
+            flex-wrap: wrap;
             align-items: center;
+
             .result_info {
               display: flex;
               flex-direction: column;
@@ -1713,9 +1478,11 @@ header {
               overflow: hidden;
               border-radius: 10px;
               padding: 20px 0px 0px 0px;
+
               table {
                 border-spacing: 0px;
                 padding: 20px 40px;
+
                 th {
                   text-align: center;
                   padding: 10px;
@@ -1729,7 +1496,8 @@ header {
                   border: 1px solid white;
                 }
               }
-              h1{
+
+              h1 {
                 margin: 0 auto;
                 margin-bottom: 20px;
                 padding: 0;
@@ -1739,23 +1507,27 @@ header {
                 align-items: center;
                 width: 100%;
               }
-              .end{
+
+              .end {
                 border: 0;
                 margin: 0;
                 padding: 10px 0;
                 background-color: rgba(13, 245, 13, 0.7);
               }
+
               .date {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 20px 50px;
+
                 .to {
                   display: flex;
                   flex-direction: column;
                   align-items: center;
                   justify-content: space-between;
                   height: 50px;
+
                   .name {
                     font-size: 20px;
                   }
@@ -1764,15 +1536,47 @@ header {
                     font-size: 18px;
                   }
                 }
-                .from{
+
+                .from {
                   @extend .to;
                 }
 
               }
 
             }
-            .form{
+
+            .form {
               @extend .result_info;
+
+              .end {
+                cursor: pointer;
+              }
+
+              .data {
+                display: flex;
+                flex-direction: column;
+                padding: 20px 50px 20px 30px;
+
+                .error {
+                  border: 1px solid rgb(255, 9, 9);
+                }
+
+                input {
+                  width: 100%;
+                  outline: none;
+                  border: 1px solid white;
+                  border-radius: 5px;
+                  margin-bottom: 25px;
+                  font-size: 20px;
+                  padding: 10px;
+                }
+              }
+
+              h3 {
+                font-size: 14px;
+                padding: 0px 50px;
+                text-align: center;
+              }
             }
           }
         }
@@ -1859,19 +1663,20 @@ header {
       }
     }
   }
+}
 
-  .success {
-    animation: animationForEvent 4s ease-in-out;
-    padding: 20px 40px;
-    font-size: 20px;
-    background-color: #00ff0d;
-    border-radius: 10px;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    opacity: 0;
-    margin-right: -100%;
-  }
+.success {
+  width: 300px;
+  animation: animationForEvent 4s ease-in-out;
+  padding: 20px 40px;
+  font-size: 20px;
+  background-color: #00ff0d;
+  border-radius: 10px;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  opacity: 0;
+  margin-left: 0px;
 }
 
 .egipt_container {

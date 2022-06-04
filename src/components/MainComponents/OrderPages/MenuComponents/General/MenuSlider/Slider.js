@@ -25,6 +25,16 @@ export default React.memo(function Slider() {
     const moveDot = index => {
         setSlideIndex(index)
     }
+    function IMGChecker(index){
+        let res = ''
+        try{
+          res = require(`../Photos/${info.hotel}/img${index+1}.jpg`)
+        }
+        catch{
+          res = require(`../Photos/undefined/DefaultPhoto.png`)
+        }
+        return res
+      }
     return (
         <div className="container-slider-order">
             {dataSlider.map((obj, index) => {
@@ -34,7 +44,7 @@ export default React.memo(function Slider() {
                     className={slideIndex === index + 1 ? "slide active-anim" : "slide"}
                     >
                         <img 
-                        src={require(`../Photos/${info.hotel}/${obj.image}`)} 
+                        src={IMGChecker(index)} 
                         />
                     </div>
                 )

@@ -44,7 +44,7 @@ export default React.memo(function Room() {
         <span className='name'>
           Эконом
         </span>
-        <Slider class={'EcoRoom'} />
+        <Slider class={'eco'} />
         <ul className='properties'>
           {Object.keys(EcoRoom).map((key) => {
             return key !== 'Price' ? <li key={key} className='properties-li'> {key === 'Area' ? '- ' + EcoRoom[key] + "м2" : '- ' + EcoRoom[key]}</li>
@@ -71,7 +71,7 @@ export default React.memo(function Room() {
         <span className='name'>
           Стандарт
         </span>
-        <Slider class={'StandartRoom'} />
+        <Slider class={'standart'} />
         <ul className='properties'>
           {Object.keys(StandartRoom).map((key) => {
             return key !== 'Price' ? <li className='properties-li'>{key === 'Area' ? '- ' + StandartRoom[key] + "м2" : '- ' + StandartRoom[key]}</li>
@@ -98,7 +98,7 @@ export default React.memo(function Room() {
         <span className='name'>
           Люкс
         </span>
-        <Slider class={'LuxuryRoom'} />
+        <Slider class={'luxury'} />
         <ul className='properties'>
           {Object.keys(LuxuryRoom).map((key) => {
             return key !== 'Price' ? <li className='properties-li'>{key === 'Area' ? '- ' + LuxuryRoom[key] + "м2" : '- ' + LuxuryRoom[key]}</li>

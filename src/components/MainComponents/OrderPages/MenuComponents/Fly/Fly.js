@@ -1,12 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { AnswerContext } from '../../AnswerContext'
+import { InfoContext } from '../../InfoContext'
 import { MenuContext } from '../General/MenuContext'
 
 export default React.memo(function Fly() {
+  const info = useContext(InfoContext)
   const { flight } = useContext(MenuContext)
   const { answer, setAnswer } = useContext(AnswerContext)
   const [nextStep, setNextStep] = useState(answer.date ? true : false)
   // const One = JSON.parse(Flight.one)
+  const [type, setType] = useState()
   const fly = JSON.parse(flight.flight)
   const [chosenDate, setChosenDate] = useState()
   const [chosenFlight, setChosenFlight] = useState()
@@ -46,17 +49,41 @@ export default React.memo(function Fly() {
       date: str
     })
     setNextStep(true)
+    // let xhr = new XMLHttpRequest();
+    // let formdata = new FormData();
+    // formdata.set('hotel', 'Bellagio')
+    // xhr.open('POST', `http://romanmadraimov.diplom/getHotelsFlightType`);
+    // xhr.onreadystatechange = function () {
+    //   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+    //     setType(prev=>JSON.parse(xhr.response))
+        
+    //   }
+    // }
+    // xhr.send(formdata)
+    // console.log(JSON.parse(type.flight_price));
   }
+  useEffect(()=>{
+    let xhr = new XMLHttpRequest();
+    let formdata = new FormData();
+    formdata.set('hotel', 'Bellagio')
+    xhr.open('POST', `http://romanmadraimov.diplom/getHotelsFlightType`);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        setType(prev=>JSON.parse(xhr.response))
+      }
+    }
+    xhr.send(formdata)
+  },[info])
   function Takeflight(elem, number, str) {
     FlightChoosen(elem)
-    console.log(answer);
     setAnswer({
       ...answer,
       flyData: {
-        name:str,
-        price:number
+        name: str,
+        price: number
       }
     })
+    console.log(answer)
   }
   return (
     <div className='fly'>
@@ -101,14 +128,14 @@ export default React.memo(function Fly() {
               </ul>
               <div className='button-container' >
                 <div className='price'>
-                  5 000
+                  {type ? JSON.parse(type.flight_price).eco :''}
                 </div>
                 {
                   answer.flyData.name === 'eco' ?
                     <div className='button active'>
                       Выбрано
                     </div> :
-                    <div className='button' onClick={(e) => Takeflight(e.target, '5000','eco')}>
+                    <div className='button' onClick={(e) => Takeflight(e.target, JSON.parse(type.flight_price).eco, 'eco')}>
                       Выбрать
                     </div>
                 }
@@ -134,14 +161,14 @@ export default React.memo(function Fly() {
               </ul>
               <div className='button-container' >
                 <div className='price'>
-                  10 000
+                { type ? JSON.parse(type.flight_price).standart:''}
                 </div>
                 {
                   answer.flyData.name === 'standart' ?
                     <div className='button active'>
                       Выбрано
                     </div> :
-                    <div className='button' onClick={(e) => Takeflight(e.target, '10000','standart')}>
+                    <div className='button' onClick={(e) => Takeflight(e.target, JSON.parse(type.flight_price).standart, 'standart')}>
                       Выбрать
                     </div>
                 }
@@ -167,16 +194,16 @@ export default React.memo(function Fly() {
               </ul>
               <div className='button-container' >
                 <div className='price'>
-                  15 000
+                {type ? JSON.parse(type.flight_price).bisness:''}
                 </div>
                 {
                   answer.flyData.name === 'bisness' ?
                     <div className='button active'>
                       Выбрано
                     </div> :
-                     <div className='button' onClick={(e) => Takeflight(e.target, '15000','bisness')}>
-                     Выбрать
-                   </div>
+                    <div className='button' onClick={(e) => Takeflight(e.target, JSON.parse(type.flight_price).bisness, 'bisness')}>
+                      Выбрать
+                    </div>
                 }
               </div>
             </li>

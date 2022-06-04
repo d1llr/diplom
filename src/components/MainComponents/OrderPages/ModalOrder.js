@@ -8,8 +8,8 @@ const Modal = ({ active, setActive, elem, setSuccess }) => {
   const setDataToDatabase = (elem) => {
     console.log(elem.ticket_limit);
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(re.test(String(document.forms.purchased_order.email.value).toLowerCase()),
-      document.forms.purchased_order.tickets.value <= elem.ticket_limit){
+    if (re.test(String(document.forms.purchased_order.email.value).toLowerCase()),
+      document.forms.purchased_order.tickets.value <= elem.ticket_limit) {
       let xhr = new XMLHttpRequest();
       let response = {}
       let formData = new FormData(document.forms.purchased_order);
@@ -29,11 +29,11 @@ const Modal = ({ active, setActive, elem, setSuccess }) => {
       }
       xhr.send(formData);
     }
-    else{
+    else {
       console.log("Ошибка при записи");
     }
-      
-    }
+
+  }
   return (
     <div className={active ? 'modal modal_active' : 'modal'} onClick={() => setActive(false)}>
       <div className={active ? 'modal__contant modal__contant_active' : 'modal__contant'} onClick={e => e.stopPropagation()}>

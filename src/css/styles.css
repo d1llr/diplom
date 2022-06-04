@@ -586,46 +586,46 @@ header .modal__contant .login .button button {
 @-webkit-keyframes animationForEvent {
   0% {
     opacity: 0;
-    margin-right: -100%;
+    margin-left: -100%;
   }
   40% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
   50% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
   60% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
   100% {
     opacity: 0;
-    margin-right: -100%;
+    margin-left: -100%;
   }
 }
 
 @keyframes animationForEvent {
   0% {
     opacity: 0;
-    margin-right: -100%;
+    margin-left: -100%;
   }
   40% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
   50% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
   60% {
     opacity: 1;
-    margin-right: 0;
+    margin-left: 0;
   }
   100% {
     opacity: 0;
-    margin-right: -100%;
+    margin-left: -100%;
   }
 }
 
@@ -710,38 +710,40 @@ header .modal__contant .login .button button {
           backdrop-filter: brightness(40%) blur(3px);
   border: 1px solid white;
   border-radius: 10px;
-  min-height: 300px;
+  min-height: 600px;
 }
 
-.Person .Person_contant .tourlist {
+.Person .Person_contant .person-tourlist {
   margin: 0;
   padding: 0;
   height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   overflow-y: scroll;
   padding: 20px 40px;
 }
 
-.Person .Person_contant .tourlist .tour {
-  -webkit-animation: gradientout 1s;
-          animation: gradientout 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  height: 350px;
+.Person .Person_contant .person-tourlist .person-tour {
   margin-bottom: 20px;
   border-radius: 20px;
+  width: 25%;
   list-style-type: none;
   border: 1px solid white;
   padding: 20px 30px;
+  padding-bottom: 0px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -751,488 +753,39 @@ header .modal__contant .login .button button {
           justify-content: space-between;
 }
 
-.Person .Person_contant .tourlist .tour:hover {
-  border: 1px solid #00ff0d;
-  -webkit-animation: gradientin 1s;
-          animation: gradientin 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.Person .Person_contant .tourlist .tour .name {
-  font-size: 32px;
-  top: -30px;
+.Person .Person_contant .person-tourlist .person-tour .order_number {
+  background-color: #ffffff;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: #000;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-left: -15%;
+  font-size: 20px;
   margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  border-radius: 5px;
 }
 
-.Person .Person_contant .tourlist .tour .name .ticket {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price .price_with_discount {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price .price_with_discount .text {
-  font-size: 17px;
-  width: 100%;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price .price_with_discount .numbers {
-  background-color: green;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price .price .text {
-  font-size: 17px;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .global_price .price .numbers {
-  background-color: #ff0303;
-  padding: 10px;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .ticketLimit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-animation: gradientin 1s;
-          animation: gradientin 1s;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .ticketLimit img {
-  width: 30px;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .ticketLimit span {
-  font-size: 20px;
+.Person .Person_contant .person-tourlist .person-tour .price {
+  border-bottom: 2px solid rgba(110, 255, 21, 0.5);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: white;
+  padding: 5px 10px;
   font-weight: bold;
-  background: linear-gradient(45deg, #fc4a1a, #f7b733);
-  background-clip: text;
-  background-size: 200% 200%;
-  -webkit-text-fill-color: transparent;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .ticketLimit span b {
-  font-weight: normal;
-  color: red;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .Custom_Button {
-  width: 100%;
-  border: 1px solid green;
-  background-color: transparent;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 15px 30px;
-  font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: green;
-  cursor: pointer;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .Custom_Button:hover {
-  color: white;
-  background-color: green;
-  -webkit-box-shadow: 0px 0px 80px 6px #18ff08;
-          box-shadow: 0px 0px 80px 6px #18ff08;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .Custom_Button_more {
-  width: 100%;
-  border: 1px solid white;
-  background-color: transparent;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 15px 30px;
-  font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  cursor: pointer;
-}
-
-.Person .Person_contant .tourlist .tour .name .ticket .Custom_Button_more:hover {
-  color: black;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 80px 6px #ffffff;
-          box-shadow: 0px 0px 80px 6px #ffffff;
-}
-
-.Person .Person_contant .tourlist .tour .main_info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-right: 30px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_1 {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  padding: 0 20px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_1 .hotel {
   font-size: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin-bottom: 20px;
 }
 
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_1 .hotel img {
-  margin-right: 10px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_1 .country {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 20px;
+.Person .Person_contant .person-tourlist .person-tour .text {
   font-size: 20px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_1 .country img {
-  margin-right: 10px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_2 {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  padding: 0 20px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_2 .date {
-  font-size: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_2 .date img {
-  width: 22px;
-  margin-right: 10px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_2 .totime {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_2 .totime img {
-  width: 22px;
-  margin-right: 10px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_3 {
-  height: 100px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 18px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_3 .plus {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  word-wrap: break-word;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_3 .plus img {
-  width: 20px;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_3 .plus span {
-  width: 80%;
-  white-space: normal;
-}
-
-.Person .Person_contant .tourlist .tour .main_info .info_container .container_3 .minus {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .ticket {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .global_price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .global_price .price_with_discount {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .global_price .price_with_discount .text {
-  font-size: 17px;
-  width: 100%;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .global_price .price_with_discount .numbers {
-  background-color: green;
   padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  text-align: center;
 }
 
-.Person .Person_contant .tourlist .tour .ticket .global_price .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .global_price .price .text {
-  font-size: 17px;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .global_price .price .numbers {
-  background-color: #ff0303;
-  padding: 10px;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .ticketLimit {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-animation: gradientin 1s;
-          animation: gradientin 1s;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .ticketLimit img {
-  width: 30px;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .ticketLimit span {
-  font-size: 20px;
-  font-weight: bold;
-  background: linear-gradient(45deg, #fc4a1a, #f7b733);
-  background-clip: text;
-  background-size: 200% 200%;
-  -webkit-text-fill-color: transparent;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .ticketLimit span b {
-  font-weight: normal;
-  color: red;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .Custom_Button {
-  width: 100%;
-  border: 1px solid green;
-  background-color: transparent;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 15px 30px;
-  font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: green;
-  cursor: pointer;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .Custom_Button:hover {
-  color: white;
-  background-color: green;
-  -webkit-box-shadow: 0px 0px 80px 6px #18ff08;
-          box-shadow: 0px 0px 80px 6px #18ff08;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .Custom_Button_more {
-  width: 100%;
-  border: 1px solid white;
-  background-color: transparent;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-size: 16px;
-  padding: 15px 30px;
-  font-weight: 500;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  cursor: pointer;
-}
-
-.Person .Person_contant .tourlist .tour .ticket .Custom_Button_more:hover {
-  color: black;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 80px 6px #ffffff;
-          box-shadow: 0px 0px 80px 6px #ffffff;
+.Person .Person_contant .person-tourlist .person-tour .text span {
+  border-bottom: 1px dashed green;
 }
 
 .Person .Person_contant .account {
@@ -1391,11 +944,6 @@ header .modal__contant .login .button button {
   color: red;
 }
 
-.Person .Person_contant .account .change_account_info form .success {
-  font-size: 14px;
-  color: #1ee018 !important;
-}
-
 .Person .Person_contant .account .change_account_info form label {
   font-style: italic;
   color: #929292;
@@ -1412,18 +960,9 @@ header .modal__contant .login .button button {
   cursor: pointer;
 }
 
-.Person .Person_contant .admin .success {
-  -webkit-animation: animationForEvent 4s ease-in-out;
-          animation: animationForEvent 4s ease-in-out;
-  padding: 20px 40px;
-  font-size: 20px;
-  background-color: #00ff0d;
-  border-radius: 10px;
-  position: absolute;
-  top: 0;
-  right: -100px;
-  opacity: 0;
-  margin-right: -100%;
+.Person .Person_contant .admin {
+  overflow: scroll;
+  height: 600px;
 }
 
 .Person .Person_contant .admin .error {
@@ -1448,7 +987,7 @@ header .modal__contant .login .button button {
   display: flex;
 }
 
-.Person .Person_contant .admin .admin_menu li {
+.Person .Person_contant .admin .admin_menu .item {
   padding: 10px;
   font-size: 18px;
   list-style-type: none;
@@ -1456,36 +995,40 @@ header .modal__contant .login .button button {
   border-radius: 10px;
   margin-right: 10px;
   margin-left: 10px;
-}
-
-.Person .Person_contant .admin .admin_menu li:hover {
-  background-color: #00ff0d;
   cursor: pointer;
 }
 
-.Person .Person_contant .admin .users, .Person .Person_contant .admin .tours {
+.Person .Person_contant .admin .admin_menu .item:hover {
+  background-color: #00ff0d;
+}
+
+.Person .Person_contant .admin .admin_menu .item.current {
+  background-color: #00ff0d;
+}
+
+.Person .Person_contant .admin .users, .Person .Person_contant .admin .tours, .Person .Person_contant .admin .hotels {
   margin: 20px 30px;
 }
 
-.Person .Person_contant .admin .users table, .Person .Person_contant .admin .tours table {
+.Person .Person_contant .admin .users table, .Person .Person_contant .admin .tours table, .Person .Person_contant .admin .hotels table {
   border: 1px;
   border-spacing: 0px;
 }
 
-.Person .Person_contant .admin .users table tr th, .Person .Person_contant .admin .tours table tr th {
+.Person .Person_contant .admin .users table tr th, .Person .Person_contant .admin .tours table tr th, .Person .Person_contant .admin .hotels table tr th {
   border: 1px solid white;
 }
 
-.Person .Person_contant .admin .users table tr td, .Person .Person_contant .admin .tours table tr td {
+.Person .Person_contant .admin .users table tr td, .Person .Person_contant .admin .tours table tr td, .Person .Person_contant .admin .hotels table tr td {
   padding: 3px 10px;
   border: 1px solid white;
 }
 
-.Person .Person_contant .admin .users table tr td img, .Person .Person_contant .admin .tours table tr td img {
+.Person .Person_contant .admin .users table tr td img, .Person .Person_contant .admin .tours table tr td img, .Person .Person_contant .admin .hotels table tr td img {
   cursor: pointer;
 }
 
-.Person .Person_contant .admin .tours .create_tour_container form {
+.Person .Person_contant .admin .tours .create_tour_container form, .Person .Person_contant .admin .hotels .create_tour_container form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1498,13 +1041,97 @@ header .modal__contant .login .button button {
   width: 70%;
 }
 
-.Person .Person_contant .admin .tours .create_tour_container form input {
+.Person .Person_contant .admin .tours .create_tour_container form input, .Person .Person_contant .admin .hotels .create_tour_container form input {
   padding: 5px 10px;
 }
 
-.Person .Person_contant .admin .tours .create_tour_container button {
+.Person .Person_contant .admin .tours .create_tour_container button, .Person .Person_contant .admin .hotels .create_tour_container button {
   padding: 10px;
   background-color: #00ff0d;
+}
+
+.Person .Person_contant .admin .hotels table {
+  height: 100px;
+}
+
+.Person .Person_contant .admin .hotels table .content {
+  width: 100px;
+  overflow: scroll;
+}
+
+.Person .Person_contant .admin .hotels table .content td {
+  white-space: nowrap;
+}
+
+.Person .Person_contant .admin .hotels table .content .description {
+  max-width: 100px;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.Person .Person_contant .admin .hotels table .content .description.active {
+  max-width: none;
+  white-space: pre-wrap;
+  overflow: auto;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-overflow: clip;
+  padding: 5px;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container {
+  width: 50%;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container .create_tour {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 20px 30px;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container .create_tour input {
+  margin-top: 20px;
+  padding: 5px 10px;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container .create_tour textarea {
+  width: 100%;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container .create_tour .button {
+  width: 40px;
+  height: 20px;
+  background-color: #00ff0d;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container button {
+  padding: 10px;
+  background-color: #00ff0d;
+}
+
+.Person .Person_contant .admin .hotels .create_tour_container .services .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @keyframes in {
@@ -2247,9 +1874,10 @@ header .modal__contant .login .button button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2347,6 +1975,41 @@ header .modal__contant .login .button button {
 
 .orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .to .info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .to .info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .result_info .date .from .info, .orderpage .orderpage__contant .tourlist .tour .main-info .result .form .date .from .info {
   font-size: 18px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .form .end {
+  cursor: pointer;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .form .data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 50px 20px 30px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .form .data .error {
+  border: 1px solid #ff0909;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .form .data input {
+  width: 100%;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.orderpage .orderpage__contant .tourlist .tour .main-info .result .form h3 {
+  font-size: 14px;
+  padding: 0px 50px;
+  text-align: center;
 }
 
 .orderpage .modal {
@@ -2455,7 +2118,8 @@ header .modal__contant .login .button button {
           box-shadow: 0px 0px 80px 6px #23068c;
 }
 
-.orderpage .success {
+.success {
+  width: 300px;
   -webkit-animation: animationForEvent 4s ease-in-out;
           animation: animationForEvent 4s ease-in-out;
   padding: 20px 40px;
@@ -2463,10 +2127,10 @@ header .modal__contant .login .button button {
   background-color: #00ff0d;
   border-radius: 10px;
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 150px;
+  left: 0;
   opacity: 0;
-  margin-right: -100%;
+  margin-left: 0px;
 }
 
 .egipt_container {

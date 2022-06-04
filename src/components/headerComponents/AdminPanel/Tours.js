@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import minus from '../../../img/minus.svg'
 import Success from '../../Success'
 import Error from '../../Error'
-export default function Tours() {
+export default React.memo(function Tours() {
     const [data, setData] = useState()
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
@@ -55,88 +55,50 @@ export default function Tours() {
     return (
         <div className='tours'>
             <table>
-                <tr>
-                    <th>
-                        id
-                    </th>
-                    <th>
-                        Имя
-                    </th>
-                    <th>
-                        Отель
-                    </th>
-                    <th>
-                        Страна
-                    </th>
-                    <th>
-                        Дата отправления
-                    </th>
-                    <th>
-                        Дата возвращения
-                    </th>
-                    <th>
-                        Количество билетов
-                    </th>
-                    <th>
-                        Описание +
-                    </th>
-                    <th>
-                        Описание -
-                    </th>
-                    <th>
-                        Цена
-                    </th>
-                    <th>
-                        Скидка
-                    </th>
-                    <th>
-                        <button onClick={() => setForm(true)}>
-                            Добавить запись
-                        </button>
-                    </th>
-                </tr>
-                {
-                    data ? data.map((elem) => {
-                        return <tr>
-                            <td>
-                                {elem.id}
-                            </td>
-                            <td>
-                                {elem.name}
-                            </td>
-                            <td>
-                                {elem.hotel}
-                            </td>
-                            <td>
-                                {elem.country}
-                            </td>
-                            <td>
-                                {elem.depart_date}
-                            </td>
-                            <td>
-                                {elem.arrive_date}
-                            </td>
-                            <td>
-                                {elem.ticket_limit}
-                            </td>
-                            <td>
-                                {elem.description_plus}
-                            </td>
-                            <td>
-                                {elem.description_minus}
-                            </td>
-                            <td>
-                                {elem.price}
-                            </td>
-                            <td>
-                                {elem.discount}
-                            </td>
-                            <td onClick={() => deleteTours(elem.id)}>
-                                <img src={minus}></img>
-                            </td>
-                        </tr>
-                    }) : 'Данных нет'
-                }
+                <tbody>
+                    <tr>
+                        <th>
+                            id
+                        </th>
+                        <th>
+                            Имя
+                        </th>
+                        <th>
+                            Отель
+                        </th>
+                        <th>
+                            Страна
+                        </th>
+                        
+                        <th>
+                            <button onClick={() => setForm(true)}>
+                                Добавить запись
+                            </button>
+                        </th>
+                    </tr>
+                    {
+                        data ? data.map((elem) => {
+                            return <tr>
+                                <td>
+                                    {elem.id}
+                                </td>
+                                <td>
+                                    {elem.name}
+                                </td>
+                                <td>
+                                    {elem.hotel}
+                                </td>
+                                <td>
+                                    {elem.country}
+                                </td>
+                                
+                                <td onClick={() => deleteTours(elem.id)}>
+                                    <img src={minus}></img>
+                                </td>
+                            </tr>
+                        }) : 'Данных нет'
+                    }
+                </tbody>
             </table>
             {form ?
                 <div className='create_tour_container'>
@@ -144,13 +106,6 @@ export default function Tours() {
                         <input name='name' placeholder='Имя' />
                         <input name='hotel' placeholder='Отель' />
                         <input name='country' placeholder='Страна' />
-                        <input name='depart_date' placeholder='Дата отправления' />
-                        <input name='arrive_date' placeholder='Дата возвращения' />
-                        <input name='ticket_limit' placeholder='Количество билетов' />
-                        <input name='description_plus' placeholder='Описание +' />
-                        <input name='description_minus' placeholder='Описание -' />
-                        <input name='price' placeholder='Цена' />
-                        <input name='discount' placeholder='Скидка' />
                     </form>
                     <button onClick={() => CreateTour()}>
                         Добавить запись
@@ -161,4 +116,4 @@ export default function Tours() {
         </div>
     )
 }
-
+)

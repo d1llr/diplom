@@ -26,7 +26,7 @@ export default React.memo(function Slider(props) {
     function IMGChecker(index){
         let res = ''
         try{
-          res = require(`../Photo/${info.hotel}/img${index}.png`)
+          res = require(`../Photo/${info.hotel}/${props.class}/img${index+1}.jpg`)
         }
         catch{
           res =  require(`../Photo/DefaultPhoto.png`)
