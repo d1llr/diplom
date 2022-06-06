@@ -3,6 +3,7 @@ import ModalOrder from './ModalOrder'
 import Success from '../../Success'
 import Tour from './Tour'
 import BtnSlider from './BtnSlider'
+import Loader from './MenuComponents/Loader/Loader'
 export default function OrderPage(props) {
   const [ModalActive, setModalActive] = useState(false)
   const [elem, setElem] = useState()
@@ -54,7 +55,15 @@ export default function OrderPage(props) {
   return (
     <section className='orderpage'>
       <div className='orderpage__contant'>
-        <ul className='tourlist'>
+        <ul className='tourlist'onLoad={() => {
+            setTimeout(() => {
+                let preloader = document.getElementById('pre-loader-tour');
+                if (!preloader.classList.contains('done')) {
+                    preloader.classList.add('done')
+                }
+            }, 1000)
+        }}>
+            <Loader/>
           {
             Data.map((elem, index) => {
               return <Tour elem={elem} classNames={slideIndex === index + 1 ? "tour active-anim" : "tour"} />

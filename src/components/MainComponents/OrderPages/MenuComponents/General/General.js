@@ -22,18 +22,18 @@ export default React.memo(function General(props) {
         xhr.send(formdata)
         setAnswer({
             ...answer,
-            tour:{
-                name:info.name,
-                country : info.country,
-                hotel :info.hotel
+            tour: {
+                name: info.name,
+                country: info.country,
+                hotel: info.hotel
             }
         })
-    },[info])
+    }, [info])
 
     return (
         <div className='general'>
-            {general ? <Slider /> : ''}
 
+            {general ? <Slider /> : ''}
 
             <ul className='header'>
                 {general ? general.description.split('<br>').map((elem) => {

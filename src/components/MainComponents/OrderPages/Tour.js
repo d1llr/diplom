@@ -20,10 +20,10 @@ export default React.memo(function Tour(props) {
     const [room, setRoom] = useState()
     const [flight, setFlight] = useState()
     const [answer, setAnswer] = useState({
-        tour:{
-            name:'',
-            country:'',
-            hotel:''
+        tour: {
+            name: '',
+            country: '',
+            hotel: ''
         },
         room: {
             name: '',
@@ -47,7 +47,7 @@ export default React.memo(function Tour(props) {
                 <ul className='menu'>
                     <li onClick={() => {
                         setMenu('general')
-                    }} className = {menu === 'general' ? 'item current' : 'item'}>
+                    }} className={menu === 'general' ? 'item current' : 'item'}>
                         Общее
                     </li>
                     <li onClick={() => {
@@ -63,7 +63,7 @@ export default React.memo(function Tour(props) {
                             }
                         }
                         xhr.send(formdata)
-                    }} className = {menu === 'services' ? 'item current' : 'item'}>
+                    }} className={menu === 'services' ? 'item current' : 'item'}>
                         Услуги
                     </li>
                     <li onClick={() => {
@@ -80,7 +80,7 @@ export default React.memo(function Tour(props) {
                             }
                         }
                         xhr.send(formdata)
-                    }} className = {menu === 'room' ? 'item current' : 'item'}>
+                    }} className={menu === 'room' ? 'item current' : 'item'}>
                         <span className={answer.room.name === '' ? '' : 'chosen'}>Номера</span>
                     </li>
                     <li onClick={() => {
@@ -108,7 +108,7 @@ export default React.memo(function Tour(props) {
                     <MenuContext.Provider value={{ general, services, room, flight }}>
                         <AnswerContext.Provider value={{ answer, setAnswer }}>
                             {
-                                menu === 'general' ? <General hotel = {props.elem}/> :
+                                menu === 'general' ? <General hotel={props.elem} /> :
                                     menu === 'services' ? <Services /> :
                                         menu === 'room' ? <Room /> :
                                             menu === 'fly' ? <Fly /> :
