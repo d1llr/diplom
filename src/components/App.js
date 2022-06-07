@@ -12,6 +12,7 @@ import { SliderContext } from './SliderContext';
 import Loader from './Loader/Loader';
 import Success from './Success';
 import { SuccessContext } from './SuccesContext'
+import About from './About';
 
 function App() {
   const [Theme, setTheme] = useState('egipt');
@@ -55,6 +56,7 @@ function App() {
                   <Route path='/' element={<Main setData={setData} />} />
                   <Route path='/OrderPage' element={Data ? <OrderPage data={Data} /> : <Mistake />} />
                   <Route path='/Person' element={<Person />} />
+                  <Route path='/About' element = { <About />}/>
                 </Routes>
                 
                 <Header />

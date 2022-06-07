@@ -52,7 +52,7 @@ export default React.memo(function Fly() {
     // let xhr = new XMLHttpRequest();
     // let formdata = new FormData();
     // formdata.set('hotel', 'Bellagio')
-    // xhr.open('POST', `http://romanmadraimov.diplom/getHotelsFlightType`);
+    // xhr.open('POST', `http://82.146.63.178/getHotelsFlightType`);
     // xhr.onreadystatechange = function () {
     //   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
     //     setType(prev=>JSON.parse(xhr.response))
@@ -66,7 +66,7 @@ export default React.memo(function Fly() {
     let xhr = new XMLHttpRequest();
     let formdata = new FormData();
     formdata.set('hotel', 'Bellagio')
-    xhr.open('POST', `http://romanmadraimov.diplom/getHotelsFlightType`);
+    xhr.open('POST', `http://82.146.63.178/getHotelsFlightType`);
     xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         setType(prev=>JSON.parse(xhr.response))

@@ -13,7 +13,7 @@ export default React.memo(function General(props) {
         let xhr = new XMLHttpRequest();
         let formdata = new FormData();
         formdata.set('hotel', info.hotel)
-        xhr.open('POST', `http://romanmadraimov.diplom/getHotelsGeneral`);
+        xhr.open('POST', `http://82.146.63.178/getHotelsGeneral`);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 setGeneral(JSON.parse(xhr.response))

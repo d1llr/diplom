@@ -30,7 +30,7 @@ export default function Account() {
             let response = {}
             let formData = new FormData(form);
             formData.set('user', users)
-            xhr.open('POST', 'http://romanmadraimov.diplom/changeLogin');
+            xhr.open('POST', 'http://82.146.63.178/changeLogin');
             // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -60,10 +60,10 @@ export default function Account() {
                 <li>
                     <div className='info'>
                         <span className='desc'>
-                            Имя
+                            Фамилия
                         </span>
                         <span className='value'>
-                            {user.name}
+                            {user.lastName}
                         </span>
                     </div>
                     <img src={Swoosh}/>
@@ -71,10 +71,10 @@ export default function Account() {
                 <li>
                     <div className='info'>
                         <span className='desc'>
-                            Фамилия
+                            Имя
                         </span>
                         <span className='value'>
-                            {user.lastName}
+                            {user.name}
                         </span>
                     </div>
                     <img src={Swoosh}/>

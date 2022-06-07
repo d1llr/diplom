@@ -11,7 +11,7 @@ export default function Contry(props) {
             Menu.current.className = 'select_body-Countrys'
             let xhr = new XMLHttpRequest();
             let response = {}
-            xhr.open('GET', 'http://romanmadraimov.diplom/getCountrys');
+            xhr.open('GET', 'http://82.146.63.178/getCountrys');
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     response = JSON.parse(xhr.response)

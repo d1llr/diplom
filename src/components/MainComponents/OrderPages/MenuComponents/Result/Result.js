@@ -35,7 +35,7 @@ export default React.memo(function Result() {
                 formdata.set('tour_price', (parseInt(answer.room.price.replace(' ',''),10)+parseInt(answer.flyData.price,10))*document.forms.data.tickets_count.value)
                 formdata.set('tour_date_to', answer.date.split(' - ')[0])
                 formdata.set('tour_date_from', answer.date.split(' - ')[1])
-                xhr.open('POST', `http://romanmadraimov.diplom/setOrder`);
+                xhr.open('POST', `http://82.146.63.178/setOrder`);
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                         setSuccess(true)

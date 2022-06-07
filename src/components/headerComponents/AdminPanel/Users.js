@@ -9,7 +9,7 @@ export default function Users() {
     useEffect(()=>{
         let xhr = new XMLHttpRequest();
         let response = []
-        xhr.open('GET', 'http://romanmadraimov.diplom/getUsers');
+        xhr.open('GET', 'http://82.146.63.178/getUsers');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 response = JSON.parse(xhr.response)
@@ -24,7 +24,7 @@ export default function Users() {
         let response = []
         let formdata = new FormData()
         formdata.set('id', id)
-        xhr.open('POST', 'http://romanmadraimov.diplom/deleteUser');
+        xhr.open('POST', 'http://82.146.63.178/deleteUser');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 response = JSON.parse(xhr.response)

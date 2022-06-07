@@ -7,7 +7,7 @@ export default function CreateOrder(props) {
   function CallToDataBase(country){
     if (country){
       let xhr = new XMLHttpRequest();
-      xhr.open('GET', `http://romanmadraimov.diplom/getDataForCountry/${country}`);
+      xhr.open('GET', `http://82.146.63.178/getDataForCountry/${country}`);
       xhr.onreadystatechange = function() {
           if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
               props.setData(JSON.parse(xhr.response));

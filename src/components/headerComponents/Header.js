@@ -27,7 +27,7 @@ export default function Header(props) {
     let xhr = new XMLHttpRequest();
     let response = {}
     let formData = new FormData(document.forms.person);
-    xhr.open('POST', 'http://romanmadraimov.diplom/auth');
+    xhr.open('POST', 'http://82.146.63.178/auth');
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -70,7 +70,7 @@ export default function Header(props) {
           let response = {}
           let formData = new FormData();
           formData.set('token', Cookies.get('token'))
-          xhr.open('POST', 'http://romanmadraimov.diplom/autorize');
+          xhr.open('POST', 'http://82.146.63.178/autorize');
           // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
           xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -101,8 +101,9 @@ export default function Header(props) {
   return (
     <header>
         <div className="contact-info">
+          <NavLink to ='/about'>
             <span>О нас</span>
-            <span>Контакты</span>
+          </NavLink>
         </div>
         <NavLink to= '/'>
           <img src={logo} alt="Логотип"/>

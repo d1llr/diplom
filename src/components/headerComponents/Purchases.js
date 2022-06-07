@@ -11,7 +11,7 @@ export default function Purchases() {
     let response = {}
     let formData = new FormData();
     formData.set('login', user.login)
-    xhr.open('POST', 'http://romanmadraimov.diplom/getOrder');
+    xhr.open('POST', 'http://82.146.63.178/getOrder');
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

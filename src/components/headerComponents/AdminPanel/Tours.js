@@ -10,7 +10,7 @@ export default React.memo(function Tours() {
     useEffect(() => {
         let xhr = new XMLHttpRequest();
         let response = []
-        xhr.open('GET', 'http://romanmadraimov.diplom/getTours');
+        xhr.open('GET', 'http://82.146.63.178/getTours');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 response = JSON.parse(xhr.response)
@@ -27,7 +27,7 @@ export default React.memo(function Tours() {
         let response = []
         let formdata = new FormData()
         formdata.set('id', id)
-        xhr.open('POST', 'http://romanmadraimov.diplom/deleteTour');
+        xhr.open('POST', 'http://82.146.63.178/deleteTour');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 console.log('Тур удален');
@@ -40,7 +40,7 @@ export default React.memo(function Tours() {
         let xhr = new XMLHttpRequest();
         let response = []
         let formdata = new FormData(document.forms.create_tour)
-        xhr.open('POST', 'http://romanmadraimov.diplom/createTours');
+        xhr.open('POST', 'http://82.146.63.178/createTours');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 console.log('Запись добавлена');

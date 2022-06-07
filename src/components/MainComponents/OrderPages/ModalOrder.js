@@ -14,7 +14,7 @@ const Modal = ({ active, setActive, elem, setSuccess }) => {
       let response = {}
       let formData = new FormData(document.forms.purchased_order);
       formData.set('elem', elem.id)
-      xhr.open('POST', 'http://romanmadraimov.diplom/setOrder');
+      xhr.open('POST', 'http://82.146.63.178/setOrder');
       // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 201) {

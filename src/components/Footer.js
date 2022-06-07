@@ -22,7 +22,7 @@ export default function Footer(props) {
         formElement.set('ArriveDate', ans4)
         formElement.set('People', ans5)
         formElement.set('Child', ans6)
-        xhr.open('POST', 'http://romanmadraimov.diplom/test1.php');
+        xhr.open('POST', 'http://82.146.63.178/test1.php');
         // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

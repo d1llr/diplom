@@ -54,7 +54,7 @@ export default React.memo(function Tour(props) {
                         let xhr = new XMLHttpRequest();
                         let formdata = new FormData();
                         formdata.set('hotel', props.elem.hotel)
-                        xhr.open('POST', `http://romanmadraimov.diplom/getHotelsServices`);
+                        xhr.open('POST', `http://82.146.63.178/getHotelsServices`);
                         xhr.onreadystatechange = function () {
                             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                                 setServices(JSON.parse(JSON.parse(xhr.response).services))
@@ -71,7 +71,7 @@ export default React.memo(function Tour(props) {
                         let xhr = new XMLHttpRequest();
                         let formdata = new FormData();
                         formdata.set('hotel', props.elem.hotel)
-                        xhr.open('POST', `http://romanmadraimov.diplom/getHotelsRooms`);
+                        xhr.open('POST', `http://82.146.63.178/getHotelsRooms`);
                         xhr.onreadystatechange = function () {
                             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                                 setRoom(JSON.parse(xhr.response))
@@ -87,7 +87,7 @@ export default React.memo(function Tour(props) {
                         let xhr = new XMLHttpRequest();
                         let formdata = new FormData();
                         formdata.set('hotel', props.elem.hotel)
-                        xhr.open('POST', `http://romanmadraimov.diplom/getHotelsFlight`);
+                        xhr.open('POST', `http://82.146.63.178/getHotelsFlight`);
                         xhr.onreadystatechange = function () {
                             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                                 setFlight(JSON.parse(xhr.response))

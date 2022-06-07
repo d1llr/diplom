@@ -11,7 +11,7 @@ export default React.memo(function Hotels() {
     useEffect(() => {
         let xhr = new XMLHttpRequest();
         let response = []
-        xhr.open('GET', 'http://romanmadraimov.diplom/getHotels');
+        xhr.open('GET', 'http://82.146.63.178/getHotels');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 response = JSON.parse(xhr.response)
@@ -24,7 +24,7 @@ export default React.memo(function Hotels() {
         let xhr = new XMLHttpRequest();
         let response = []
         let formdata = new FormData(document.forms.create_tour)
-        xhr.open('POST', 'http://romanmadraimov.diplom/createTours');
+        xhr.open('POST', 'http://82.146.63.178/createTours');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 console.log('Запись добавлена');
