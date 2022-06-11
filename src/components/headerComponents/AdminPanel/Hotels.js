@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import minus from '../../../img/minus.svg'
 export default React.memo(function Hotels() {
     const [data, setData] = useState()
+    const [services, setServices] = useState()
     const [success, setSuccess] = useState(false)
     const [error, setError] = useState(false)
     const [description, setDescription] = useState(false)
     const [form, setForm] = useState(false)
-    const [counter,setCounter] = useState(0)
+    const [counter, setCounter] = useState(0)
     console.log(data);
     useEffect(() => {
         let xhr = new XMLHttpRequest();
@@ -19,7 +20,22 @@ export default React.memo(function Hotels() {
             }
         }
         xhr.send();
-    }, [])
+    }, [success, error])
+    function getHotelsServices() {
+        let xhr = new XMLHttpRequest();
+        let response = []
+        let formData = new FormData()
+        formData.set('hotel', 'Bellagio')
+        xhr.open('POST', 'http://82.146.63.178/getHotelsServices');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                response = JSON.parse(xhr.response)
+                setServices(JSON.parse(response.services))
+                // console.log(services);
+            }
+        }
+        xhr.send(formData);
+    }
     function CreateHotel() {
         let xhr = new XMLHttpRequest();
         let response = []
@@ -32,6 +48,20 @@ export default React.memo(function Hotels() {
             }
             else {
                 setError(true)
+            }
+        }
+        xhr.send(formdata);
+    }
+    function deleteHotels(id) {
+        let xhr = new XMLHttpRequest();
+        let response = []
+        let formdata = new FormData()
+        formdata.set('id', id)
+        xhr.open('POST', 'http://82.146.63.178/deleteHotels');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                console.log('Тур удален');
+                setSuccess(true)
             }
         }
         xhr.send(formdata);
@@ -78,7 +108,12 @@ export default React.memo(function Hotels() {
                             Цена перелета
                         </th>
                         <th rowSpan='2'>
-                            <button onClick={() => setForm(true)}>
+                            <button onClick={() => {
+                                getHotelsServices()
+                                setForm(true)
+                                
+                            }
+                            }>
                                 Добавить запись
                             </button>
                         </th>
@@ -145,7 +180,7 @@ export default React.memo(function Hotels() {
                                 return <td>{JSON.parse(elem.flight_price)[e]} ₽</td>
                             }
                             ) : ''}
-                            <td onClick={() => console.log()}>
+                            <td onClick={() => deleteHotels(elem.id)}>
                                 <img src={minus}></img>
                             </td>
                         </tr>
@@ -157,16 +192,14 @@ export default React.memo(function Hotels() {
                     <form name='create_tour' className='create_tour'>
                         <input name='name' placeholder='Название отеля' />
                         <textarea name='hotel' placeholder='Описание (<br>) для абзацев' type='textarea' />
-                        <input name='services' placeholder='Услуги (через запятую)' className='test1' />
-                        <div onClick={e => {
-                            let div = document.createElement('div')
-                            let form = document.querySelector('.create_tour')
-                            let add = document.querySelector('.button')
-                            div.innerHTML = '<input type="text" placeholder="Ключ" name = "setkey'+counter+'" /> <input type="text" placeholder="Значение" name = "value"/>'
-                            setCounter(prev=>prev+1)
-                            form.insertBefore(div, add)
-                        }} className='button'></div>
-
+                        <label>Услуги</label>
+                        <div>
+                            {
+                                services ? services.map((key,value)=>{
+                                    return <span>{value}</span>
+                                }) : ''
+                            }
+                        </div>
                         {/* <input name='eco_room' placeholder='Эконом-номер (через запятую, цена последняя)' />
                         <input name='standart_room' placeholder='Стандарт-номер (через запятую, цена последняя)' />
                         <input name='luxury_room' placeholder='Люкс-номер (через запятую, цена последняя)' />

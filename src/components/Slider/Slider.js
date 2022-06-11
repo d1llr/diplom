@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react'
 import { SliderContext } from '../SliderContext'
 import BtnSlider from './BtnSlider'
 import dataSlider from './DataSlider'
-export default function Slider() {
+export default React.memo(function Slider() {
 
     const [slideIndex, setSlideIndex] = useState(1)
     const Data = [{
@@ -35,7 +35,6 @@ export default function Slider() {
                 h3:Data[slideIndex].h3
             })
             if (slideIndex===4) {
-                console.log('4');
                 setSliderConnect(1)
                 setMainText({
                     h1:Data[4].h1,
@@ -43,7 +42,10 @@ export default function Slider() {
                 })
                 setNextMainText(Data[0].h1)
             }
-            setNextMainText(Data[slideIndex+1].h1)
+            else{
+               setNextMainText(Data[slideIndex+1].h1 ? Data[slideIndex+1].h1 : '') 
+            }
+            
         }  
         else if (slideIndex === dataSlider.length){
             setSlideIndex(1)
@@ -58,7 +60,7 @@ export default function Slider() {
     useEffect(()=>{
         setTimeout(() => {
             nextSlide()
-        }, 10000);
+        }, 3000);
     },[slideIndex]) 
     return (
         <div className="container-slider">
@@ -86,4 +88,4 @@ export default function Slider() {
             </div> */}
         </div>
     )
-}
+})

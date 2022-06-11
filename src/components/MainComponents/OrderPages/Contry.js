@@ -37,13 +37,16 @@ export default function Contry(props) {
     const [Countrys,setCountrys] = useState()
   return (
     <section className='contry'>
-        <div className="select-Countrys">
+        <div className={props.class}>
                 <div className="select-header-Countrys" onClick={() => showMenu()}>
                     <div className="current-container-Countrys">
                         <span className="text">Страна</span>
                     <span className="select_current-Countrys"><i>{Default}</i></span> 
                     </div>
                     <div className="select_icon"><img src={options} alt=""/></div>
+                </div>
+                <div className='load'>
+
                 </div>
                 <ul ref = {Menu}className="select_body-Countrys hidden">
                     {Countrys ? Countrys.map(elem => <li className='select_item' key={elem.name} onClick ={()=>ChangeValue(elem.name)}> {elem.name}</li>) : ''}

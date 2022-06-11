@@ -3,6 +3,7 @@ import Users from './Users'
 import Tours from './Tours'
 
 import Hotels from './Hotels'
+import AllPurchases from './AllPurchases'
 
 export default function AdminPanel() {
   const [toggle,setToggle] = useState('users')
@@ -24,9 +25,14 @@ export default function AdminPanel() {
           }} className = {toggle === 'hotels' ? 'item current': 'item'}>
           Список отелей
         </li>
+        <li onClick={()=>{
+          setToggle('purchases')
+          }} className = {toggle === 'purchases' ? 'item current': 'item'}>
+          Список покупок
+        </li>
       </ul>
       {
-        toggle === 'users' ? <Users/> : toggle === 'tours' ? <Tours/> : <Hotels/>
+        toggle === 'users' ? <Users/> : toggle === 'tours' ? <Tours/> : toggle === 'hotels'?<Hotels/> : <AllPurchases/>
       }
       <div>
 

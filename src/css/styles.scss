@@ -124,28 +124,53 @@ body {
 
   @keyframes spin {
     from {
-      transform: translate(-50%, -50%) rotate(0deg);
+      transform: rotate(0deg);
     }
 
     to {
-      transform: translate(-50%, -50%) rotate(360deg);
+      transform: rotate(360deg);
     }
   }
 
   .loader {
-    width: 75px;
-    height: 75px;
+    width: 300px;
+    height: 300px;
     border: 10px solid white;
     border-radius: 50%;
-    border-top-color: rgb(173, 111, 28);
-    background: #000;
+    background: rgb(255, 255, 255);
     left: 50%;
     top: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
-    animation: 1s spin infinite linear;
-  }
+    animation: 2s spin infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    .circle {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
 
+  }
+  .center-photo {
+    overflow: hidden;
+    border-radius: 50%;
+    animation: none;
+    top: 50%;
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50px,-50px);
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
   &.done {
     opacity: 0;
     visibility: hidden;
@@ -182,10 +207,12 @@ header {
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid transparent;
-    a{
+
+    a {
       text-decoration: none;
       color: rgb(255, 255, 255);
-      &:hover{
+
+      &:hover {
         border-bottom: 1px solid white;
       }
     }
@@ -392,8 +419,8 @@ header {
   }
 }
 
-.about{
-  
+.about {
+
   margin-top: 200px;
   padding: 0px 200px;
   padding-bottom: 100px;
@@ -405,31 +432,37 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  h1{
+
+  h1 {
     opacity: 0.5;
   }
-  .center{
+
+  .center {
     opacity: 1;
     margin: 0px auto;
     text-align: center;
   }
-  iframe{
+
+  iframe {
     border-radius: 20px;
     width: 30vw;
     height: 30vh;
   }
-  ul{
-    li{
+
+  ul {
+    li {
       background: linear-gradient(#ffffff, #00ff0d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       list-style-type: none;
-      &::before{
+
+      &::before {
         content: '- ';
       }
     }
   }
 }
+
 @keyframes gradientin {
   0% {
     background-position: 0 50%;
@@ -645,7 +678,7 @@ header {
       padding: 130px 150px;
 
       .account_info {
-        ul {
+        form {
           margin: 0;
           padding: 0;
 
@@ -676,6 +709,12 @@ header {
 
             .value {
               font-size: 20px;
+              background: inherit;
+              outline: none;
+              border: 0;
+              border-radius: 10px;
+              padding: 10px;
+              color: white;
             }
           }
         }
@@ -695,8 +734,7 @@ header {
             border: none;
             border-bottom: 1px solid rgb(255, 255, 255);
             background-color: inherit;
-            color: white;
-            font-size: 16px;
+            font-size: 20px;
             margin-bottom: 5px;
             padding: 3px 5px;
             outline: none;
@@ -707,9 +745,6 @@ header {
               border-radius: 5px;
             }
 
-            &::placeholder {
-              color: white;
-            }
           }
 
           .label {
@@ -750,17 +785,18 @@ header {
           }
         }
 
-        button {
-          background-color: green;
-          border: 0;
-          border-radius: 14px;
-          height: 30px;
-          color: rgb(0, 0, 0);
-          margin-top: 30px;
-          cursor: pointer;
-        }
+
       }
 
+      button {
+        background-color: green;
+        border: 0;
+        border-radius: 14px;
+        height: 30px;
+        color: rgb(0, 0, 0);
+        margin-top: 30px;
+        cursor: pointer;
+      }
     }
 
     .admin {
@@ -901,21 +937,25 @@ header {
 
         .create_tour_container {
           width: 50%;
+
           .create_tour {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-            border:1px solid white;
+            border: 1px solid white;
             border-radius: 5px;
             padding: 20px 30px;
+
             input {
               margin-top: 20px;
               padding: 5px 10px;
             }
-            textarea{
+
+            textarea {
               width: 100%;
             }
-            .button{
+
+            .button {
               width: 40px;
               height: 20px;
               background-color: #00ff0d;
@@ -926,14 +966,17 @@ header {
             padding: 10px;
             background-color: #00ff0d;
           }
-          .services{
-            .options{
+
+          .services {
+            .options {
               display: flex;
               flex-direction: column;
             }
           }
         }
       }
+
+      .all-purchases {}
     }
   }
 }
@@ -965,6 +1008,7 @@ header {
     .tourlist {
       margin: 0;
       padding: 40px 0;
+
       .preloader-tour {
         position: fixed;
         left: 0;
@@ -976,17 +1020,17 @@ header {
         transition: 1s all;
         opacity: 1;
         visibility: visible;
-      
+
         @keyframes spin {
           from {
             transform: translate(-50%, -50%) rotate(0deg);
           }
-      
+
           to {
             transform: translate(-50%, -50%) rotate(360deg);
           }
         }
-      
+
         .loader {
           width: 75px;
           height: 75px;
@@ -1000,12 +1044,13 @@ header {
           transform: translate(-50%, -50%);
           animation: 1s spin infinite linear;
         }
-      
+
         &.done {
           opacity: 0;
           visibility: hidden;
         }
       }
+
       .btn-slide-main {
         width: 60px;
         height: 60px;
@@ -1053,6 +1098,7 @@ header {
         flex-direction: column;
         overflow: scroll;
         opacity: 0;
+
         &.active-anim {
           opacity: 1;
           display: flex;
@@ -1069,6 +1115,7 @@ header {
         .main-info {
           width: 100%;
           height: 100%;
+
           .menu {
             display: flex;
             flex-direction: row;
@@ -1111,6 +1158,7 @@ header {
             flex-wrap: wrap;
             padding: 30px;
             justify-content: space-between;
+
             .container-slider-order {
               width: 15%;
               height: 60vh;
@@ -1216,6 +1264,7 @@ header {
             padding-top: 20px;
             height: 600px;
             width: 100%;
+
             li {
               list-style-type: none;
               display: flex;
@@ -1839,6 +1888,10 @@ header {
             border-radius: 10px;
             flex-direction: row;
 
+            &.false {
+              border: 1px solid red;
+            }
+
             .select-header-Countrys {
               width: 100%;
               display: flex;
@@ -1884,6 +1937,7 @@ header {
               overflow-y: scroll;
               height: 150px;
               padding: 0;
+              border: 1px solid white;
 
               .select_item {
                 list-style-type: none;
@@ -1892,7 +1946,6 @@ header {
                 padding: 8px;
                 padding-left: 20px;
                 border-bottom: 1px solid #f0f0f0;
-
                 cursor: pointer;
 
                 &:hover {
@@ -1916,6 +1969,11 @@ header {
         transition: 0.2s;
         color: rgb(160, 158, 158);
         cursor: pointer;
+
+        &.true {
+          color: #fff;
+          border: 1px solid rgb(255, 255, 255);
+        }
 
         &:hover {
           color: rgb(239, 232, 32);

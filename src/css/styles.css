@@ -135,40 +135,82 @@ body {
 
 @-webkit-keyframes spin {
   from {
-    -webkit-transform: translate(-50%, -50%) rotate(0deg);
-            transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
-    -webkit-transform: translate(-50%, -50%) rotate(0deg);
-            transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 .preloader .loader {
-  width: 75px;
-  height: 75px;
+  width: 300px;
+  height: 300px;
   border: 10px solid white;
   border-radius: 50%;
-  border-top-color: #ad6f1c;
-  background: #000;
+  background: white;
   left: 50%;
   top: 50%;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-animation: 1s spin infinite linear;
-          animation: 1s spin infinite linear;
+  -webkit-animation: 2s spin infinite linear;
+          animation: 2s spin infinite linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  pointer-events: none;
+}
+
+.preloader .loader .circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.preloader .center-photo {
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-animation: none;
+          animation: none;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translate(-50px, -50px);
+          transform: translate(-50px, -50px);
+}
+
+.preloader .center-photo img {
+  width: 100px;
+  height: 100px;
 }
 
 .preloader.done {
@@ -861,12 +903,12 @@ header .modal__contant .login .button button {
   padding: 130px 150px;
 }
 
-.Person .Person_contant .account .account_info ul {
+.Person .Person_contant .account .account_info form {
   margin: 0;
   padding: 0;
 }
 
-.Person .Person_contant .account .account_info ul li {
+.Person .Person_contant .account .account_info form li {
   list-style-type: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -881,12 +923,12 @@ header .modal__contant .login .button button {
   margin-top: 20px;
 }
 
-.Person .Person_contant .account .account_info ul li img {
+.Person .Person_contant .account .account_info form li img {
   margin-bottom: 5px;
   margin-left: 15px;
 }
 
-.Person .Person_contant .account .account_info ul li .info {
+.Person .Person_contant .account .account_info form li .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -898,14 +940,20 @@ header .modal__contant .login .button button {
   width: 300px;
 }
 
-.Person .Person_contant .account .account_info ul li .desc {
+.Person .Person_contant .account .account_info form li .desc {
   font-style: italic;
   color: whitesmoke;
   margin-bottom: 5px;
 }
 
-.Person .Person_contant .account .account_info ul li .value {
+.Person .Person_contant .account .account_info form li .value {
   font-size: 20px;
+  background: inherit;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
 }
 
 .Person .Person_contant .account .change_account_info form {
@@ -927,8 +975,7 @@ header .modal__contant .login .button button {
   border: none;
   border-bottom: 1px solid white;
   background-color: inherit;
-  color: white;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 5px;
   padding: 3px 5px;
   outline: none;
@@ -939,22 +986,6 @@ header .modal__contant .login .button button {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 5px;
-}
-
-.Person .Person_contant .account .change_account_info form .inputlogin::-webkit-input-placeholder {
-  color: white;
-}
-
-.Person .Person_contant .account .change_account_info form .inputlogin:-ms-input-placeholder {
-  color: white;
-}
-
-.Person .Person_contant .account .change_account_info form .inputlogin::-ms-input-placeholder {
-  color: white;
-}
-
-.Person .Person_contant .account .change_account_info form .inputlogin::placeholder {
-  color: white;
 }
 
 .Person .Person_contant .account .change_account_info form .label {
@@ -1007,7 +1038,7 @@ header .modal__contant .login .button button {
   margin-bottom: 5px;
 }
 
-.Person .Person_contant .account .change_account_info button {
+.Person .Person_contant .account button {
   background-color: green;
   border: 0;
   border-radius: 14px;
@@ -2352,6 +2383,10 @@ header .modal__contant .login .button button {
           flex-direction: row;
 }
 
+.egipt_container .main-text .CreateOrder .CreateOrder_container .contry .select-Countrys.false {
+  border: 1px solid red;
+}
+
 .egipt_container .main-text .CreateOrder .CreateOrder_container .contry .select-Countrys .select-header-Countrys {
   width: 100%;
   display: -webkit-box;
@@ -2421,6 +2456,7 @@ header .modal__contant .login .button button {
   overflow-y: scroll;
   height: 150px;
   padding: 0;
+  border: 1px solid white;
 }
 
 .egipt_container .main-text .CreateOrder .CreateOrder_container .contry .select-Countrys .select_body-Countrys .select_item {
@@ -2450,6 +2486,11 @@ header .modal__contant .login .button button {
   transition: 0.2s;
   color: #a09e9e;
   cursor: pointer;
+}
+
+.egipt_container .main-text .CreateOrder .Custom_Button.true {
+  color: #fff;
+  border: 1px solid white;
 }
 
 .egipt_container .main-text .CreateOrder .Custom_Button:hover {

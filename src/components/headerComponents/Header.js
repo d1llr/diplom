@@ -110,7 +110,7 @@ export default function Header(props) {
         </NavLink>
         <div className="authorize" onClick={()=>{user.name !== 'Войти' ? routeChange() : setModalActive(true)}}>
             <img src={searchIcon} alt=""/>
-            <span>{user.name}</span>
+            <span>{user.name ? user.name : 'Пользователь'}</span>
         </div>
         <Modal active = {ModalActive} setActive = {setModalActive}>
           <section className='login'>
@@ -123,8 +123,8 @@ export default function Header(props) {
             </div>
             <form name = 'person'>
               <label for = 'name' className='error'> {emailError}</label>
-              <input placeholder='username' name = 'login' className='inputlogin'></input>
-              <input placeholder='password' name = 'password' className='inputpassword'></input>
+              <input type='text' placeholder='username' name = 'login' className='inputlogin'></input>
+              <input type='password' placeholder='password' name = 'password' className='inputpassword'></input>
             </form>
             <div className='button'>
                 <button onClick={()=>login(document.forms.person)}>

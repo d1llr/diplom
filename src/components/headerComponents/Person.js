@@ -31,7 +31,7 @@ export default function Person(props) {
   return (
     <div className='Person'>
       <div className="Person__header">
-        <h1>Личный кабинет {user.name}</h1>
+        <h1>Личный кабинет {user.name ? user.name : 'Пользователя'}</h1>
         <section className="menu">
           <ul>
                 <li onClick={()=>setAccount(true)}>
