@@ -3,12 +3,13 @@ import Swoosh from 'C:/diplom/src/img/swoosh.svg'
 import { UserContext } from "../UserContext";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import InputMask from 'react-input-mask';
+
+
 export default function Account() {
     const { user, setUser } = useContext(UserContext);
     const [emailError, setEmailError] = useState('Email')
     const [labelClassName, setlLabelClassName] = useState('label')
-
-
 
     let navigate = useNavigate();
     function routeChange() {
@@ -25,11 +26,18 @@ export default function Account() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 response = JSON.parse(xhr.response)
-            }
-            else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 403) {
-                setEmailError('Ошибка при записи')
-                console.log(JSON.parse(xhr.response));
-                form.login.className += ' inputerror'
+                console.log(response);
+                setUser({
+                    ...user,
+                    lastName:response.last_name,
+                    name:response.name,
+                    middleName:response.middle_name,
+                    mobileNumber:response.mobile_number
+                })
+                document.forms.info.name.value = ''
+                document.forms.info.last_name.value = ''
+                document.forms.info.middle_name.value = ''
+                document.forms.info.mobile_number.value = ''
             }
         }
         xhr.send(formData);
@@ -80,7 +88,7 @@ export default function Account() {
                             <span className='desc'>
                                 Фамилия
                             </span>
-                            <input className='value' placeholder={user.lastName ? user.lastName : "Данных нет"}>
+                            <input name = 'last_name'className='value' placeholder={user.lastName ? user.lastName : "Данных нет"}>
 
                             </input>
                         </div>
@@ -91,7 +99,7 @@ export default function Account() {
                             <span className='desc'>
                                 Имя
                             </span>
-                            <input className='value' placeholder={user.name ? user.name : "Данных нет"}>
+                            <input  name = 'name' className='value' placeholder={user.name ? user.name : "Данных нет"}>
 
                             </input>
                         </div>
@@ -102,7 +110,7 @@ export default function Account() {
                             <span className='desc'>
                                 Отчество (если имеется)
                             </span>
-                            <input className='value' placeholder={user.middleName ? user.middleName : "Данных нет"}>
+                            <input  name = 'middle_name' className='value' placeholder={user.middleName ? user.middleName : "Данных нет"}>
 
                             </input>
                         </div>
@@ -113,15 +121,15 @@ export default function Account() {
                             <span className='desc'>
                                 Номер телефона
                             </span>
-                            <input className='value' placeholder={user.mobileNumber ? user.mobileNumber : "Данных нет"}>
-                            </input>
+                            <InputMask mask='+7(999) 999-99-99' placeholder={user.mobileNumber ? user.mobileNumber:'000000'} className='value' name='mobile_number'>
+                            </InputMask>
                         </div>
                         <img src={Swoosh} />
                     </li>
-                    <button onClick={() => ChangeAccountInfo(document.forms.info, user.login)}>
+                </form>
+                <button onClick={() => ChangeAccountInfo(document.forms.info, user.login)}>
                         Применить
                     </button>
-                </form>
             </div>
             <div className='change_account_info'>
                 <h2>

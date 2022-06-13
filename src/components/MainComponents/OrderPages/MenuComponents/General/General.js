@@ -29,7 +29,7 @@ export default React.memo(function General(props) {
             }
         })
     }, [info])
-
+    console.log('рендер');
     return (
         <div className='general'>
 

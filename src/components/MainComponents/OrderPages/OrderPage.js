@@ -4,7 +4,7 @@ import Success from '../../Success'
 import Tour from './Tour'
 import BtnSlider from './BtnSlider'
 import Loader from './MenuComponents/Loader/Loader'
-export default function OrderPage(props) {
+export default React.memo(function OrderPage(props) {
   const [ModalActive, setModalActive] = useState(false)
   const [elem, setElem] = useState()
   const [slideIndex, setSlideIndex] = useState(1)
@@ -27,7 +27,7 @@ export default function OrderPage(props) {
   )
   useEffect(() => {
     props.data ? setData(props.data) : console.log("Ошибка в компоненте OrderPage");
-  })
+  },[props.data])
   function TakingOrder(e) {
     setModalActive(true)
     console.log(e);
@@ -80,4 +80,4 @@ export default function OrderPage(props) {
       {success ? <Success /> : ''}
     </section>
   )
-}
+})

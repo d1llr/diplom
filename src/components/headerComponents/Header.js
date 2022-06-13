@@ -123,8 +123,8 @@ export default function Header(props) {
             </div>
             <form name = 'person'>
               <label for = 'name' className='error'> {emailError}</label>
-              <input type='text' placeholder='username' name = 'login' className='inputlogin'></input>
-              <input type='password' placeholder='password' name = 'password' className='inputpassword'></input>
+              <input type='text' placeholder='Логин' name = 'login' className='inputlogin'></input>
+              <input type='password' placeholder='Пароль' name = 'password' className='inputpassword'></input>
             </form>
             <div className='button'>
                 <button onClick={()=>login(document.forms.person)}>

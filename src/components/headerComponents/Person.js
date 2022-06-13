@@ -9,7 +9,7 @@ import AdminPanel from "./AdminPanel/AdminPanel";
 
 
 
-export default function Person(props) {
+export default React.memo(function Person(props) {
     const [account, setAccount] = useState(true)
     const {user, setUser} = useContext(UserContext);
     let navigate = useNavigate(); 
@@ -56,4 +56,4 @@ export default function Person(props) {
       </div>
     </div>
   )
-}
+})

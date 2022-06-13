@@ -60,7 +60,7 @@ export default React.memo(function Slider() {
     useEffect(()=>{
         setTimeout(() => {
             nextSlide()
-        }, 3000);
+        }, 13000);
     },[slideIndex]) 
     return (
         <div className="container-slider">
